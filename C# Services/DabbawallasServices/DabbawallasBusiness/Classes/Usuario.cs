@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DabbawallasData;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DabbawallasBusiness.Classes
 {
-    class Usuario
+    public class Usuario
     {
+        //[Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdUsuario { get; set; }
         public int? IdTipoUsuario { get; set; }
         public string Username { get; set; }
@@ -17,6 +21,17 @@ namespace DabbawallasBusiness.Classes
         public string Apellido { get; set; }
         public string Email { get; set; }
         public string Celular { get; set; }
+
+        public Usuario(int? idTipoUsuario, string username, string password, string nombre, string apellido, string email, string celular)
+        {
+            IdTipoUsuario = idTipoUsuario;
+            Username = username;
+            Password = password;
+            Nombre = nombre;
+            Apellido = apellido;
+            Email = email;
+            Celular = celular;
+        }
 
         public Usuario()
         {
@@ -44,8 +59,9 @@ namespace DabbawallasBusiness.Classes
                 Celular = user.CELULAR;
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                string mes = e.Message;
                 return false;
             }
         }
@@ -54,7 +70,54 @@ namespace DabbawallasBusiness.Classes
         {
             try
             {
-                //ToDo
+                USUARIO usuar = Connection.DabbawallaDB.USUARIO.First(usuario => usuario.USERNAME == user && usuario.PASSWORD == pass);
+                IdUsuario = usuar.ID_USUARIO;
+                ReadUser();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool CreateUser()
+        {
+            try
+            {
+                if (UsernameAlreadyExists())
+                {
+                    return false;
+                }
+                else
+                {
+                    USUARIO user = new USUARIO
+                    {
+                        ID_TIPO_USUARIO = IdTipoUsuario,
+                        //user.ID_USUARIO = IdUsuario;
+                        NOMBRE = Nombre,
+                        APELLIDO = Apellido,
+                        PASSWORD = Password,
+                        USERNAME = Username,
+                        CELULAR = Celular,
+                        EMAIL = Email
+                    };
+                    Connection.DabbawallaDB.USUARIO.Add(user);
+                    Connection.DabbawallaDB.SaveChanges();
+                    return true;
+                }
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool UsernameAlreadyExists()
+        {
+            try
+            {
+                Connection.DabbawallaDB.USUARIO.First(usr => usr.USERNAME.Equals(Username, StringComparison.InvariantCultureIgnoreCase));
                 return true;
             }
             catch (Exception e)

@@ -9,6 +9,7 @@ namespace DabbawallasBusiness.Classes
 {
     class Cliente : Usuario
     {
+        private const int ClienteTypeId = 1;
         public int IdCliente { get; set; }
         public string DireccionHogar { get; set; }
         public string DireccionTrabajo { get; set; }
@@ -17,10 +18,27 @@ namespace DabbawallasBusiness.Classes
         public int IdEstadoSuscripcion { get; set; }
         public Dabbawalla DabbawallaAsociado { get; set; }
 
+        public Cliente()
+        {
+
+        }
+
         public Cliente(int idCliente)
         {
             IdCliente = IdCliente;
             Read();
+        }
+
+        public Cliente(string direccionHogar, string direccionTrabajo, int idComunaHogar, int idComunaTrabajo, int idEstadoSuscripcion, int idDabbawalla,
+            string username, string password, string nombre, string apellido, string email, string celular) 
+            : base(ClienteTypeId, username, password, nombre, apellido, email, celular)
+        {
+            DireccionHogar = direccionHogar;
+            DireccionTrabajo = direccionTrabajo;
+            IdComunaHogar = idComunaHogar;
+            IdComunaTrabajo = idComunaTrabajo;
+            IdEstadoSuscripcion = idEstadoSuscripcion;
+            DabbawallaAsociado = new Dabbawalla(idDabbawalla);
         }
 
         public bool Read()
@@ -47,13 +65,42 @@ namespace DabbawallasBusiness.Classes
         {
             try
             {
-                //TODO
-                return true;
+                if (CreateUser())
+                {
+                    CLIENTE cli = new CLIENTE
+                    {
+                        DIRECCION_HOGAR = DireccionHogar,
+                        DIRECCION_TRABAJO = DireccionTrabajo,
+                        ID_COMUNA_HOGAR = IdComunaHogar,
+                        ID_COMUNA_TRABAJO = IdComunaTrabajo,
+                        ID_ESTADO_SUSCRIPCION = IdEstadoSuscripcion,
+                        ID_DABBAWALLA_ASOCIADO = DabbawallaAsociado.IdDabbawalla
+                    };
+                    Connection.DabbawallaDB.CLIENTE.Add(cli);
+                    Connection.DabbawallaDB.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception e)
             {
                 return false;
             }
+        }
+
+        public Cliente SearchClientByUsername(string username)
+        {
+            int UserId = Connection.DabbawallaDB.USUARIO.First(usr => usr.USERNAME.Equals(username, StringComparison.InvariantCultureIgnoreCase)).ID_USUARIO;
+            int clientId = Connection.DabbawallaDB.CLIENTE.First(cli => cli.ID_USUARIO == UserId).ID_CLIENTE;
+            return new Cliente(clientId);
+        }
+
+        public Supervisor AssociatedSupervisor()
+        {
+            return DabbawallaAsociado.SupervisorAsociado;
         }
     }
 }
