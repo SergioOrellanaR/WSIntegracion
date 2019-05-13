@@ -55,8 +55,6 @@ class GeorefController extends Controller
                 }else{
                     return  response()->json($array,200);
                 }
-
-
             } else {
                 return response()->json(['success' => false, 'error' => 'Debe ingresar un Json'], 400, []);
             }
