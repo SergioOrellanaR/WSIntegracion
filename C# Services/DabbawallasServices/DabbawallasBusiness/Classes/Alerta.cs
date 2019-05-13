@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DabbawallasData;
 
 namespace DabbawallasBusiness.Classes
 {
@@ -13,28 +14,32 @@ namespace DabbawallasBusiness.Classes
         public int IdTipoAlerta { get; set; }
         public DateTime FechaAlerta { get; set; }
 
-        public Alerta()
+        public Alerta(int idCliente)
         {
-            //ToDo
+            int IdEstadoAlertaAbierta = 1;
+            ClienteAlerta = new Cliente(idCliente);
+            IdTipoAlerta = IdEstadoAlertaAbierta;
+            FechaAlerta = DateTime.Now;
         }
 
         public bool Create()
         {
             try
             {
-                //TODO
+                ALERTA alert = new ALERTA
+                {
+                    ID_CLIENTE_ALERTA = ClienteAlerta.IdCliente,
+                    ID_TIPO_ALERTA = IdTipoAlerta,
+                    FECHA_ALERTA = FechaAlerta
+                };
+                Connection.DabbawallaDB.ALERTA.Add(alert);
+                Connection.DabbawallaDB.SaveChanges();
                 return true;
             }
             catch (Exception e)
             {
                 return false;
             }
-        }
-
-        public Dabbawalla GetDabbawallaAsociado ()
-        {
-            //ToDo
-            return new Dabbawalla();
         }
     }
 }

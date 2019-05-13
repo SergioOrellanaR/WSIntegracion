@@ -9,6 +9,7 @@ namespace DabbawallasBusiness.Classes
 {
     class Supervisor : Usuario
     {
+        private const int SupervisorTypeId = 3;
         public int IdSupervisor { get; set; }
         public int IdZona { get; set; }
 
@@ -16,6 +17,12 @@ namespace DabbawallasBusiness.Classes
         {
             IdSupervisor = IdSupervisor;
             Read();
+        }
+
+        public Supervisor(int idzona, string username, string password, string nombre, string apellido, string email, string celular) 
+            : base(SupervisorTypeId, username,password,nombre,apellido,email,celular)
+        {
+            IdZona = idzona;
         }
 
         public bool Read()
@@ -38,8 +45,21 @@ namespace DabbawallasBusiness.Classes
         {
             try
             {
-                //TODO
-                return true;
+                if (CreateUser())
+                {
+                    SUPERVISOR sup = new SUPERVISOR
+                    {
+                        ID_ZONA = IdZona,
+                        ID_USUARIO = IdUsuario
+                    };
+                    Connection.DabbawallaDB.SUPERVISOR.Add(sup);
+                    Connection.DabbawallaDB.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception e)
             {
