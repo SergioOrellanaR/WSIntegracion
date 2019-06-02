@@ -7,7 +7,7 @@ using DabbawallasData;
 
 namespace DabbawallasBusiness.Classes
 {
-    class Dabbawalla : Usuario
+    public class Dabbawalla : Usuario
     {
         private const int DabbawallaTypeId = 2;
         public int IdDabbawalla { get; set; }
@@ -20,8 +20,11 @@ namespace DabbawallasBusiness.Classes
 
         public Dabbawalla(int idDabbawalla)
         {
-            IdDabbawalla = IdDabbawalla;
-            Read();
+            IdDabbawalla = idDabbawalla;
+            if (Read() == false)
+            {
+                IdDabbawalla = -1;
+            }
         }
 
         public Dabbawalla(int idSupervisor, string username, string password, string nombre, string apellido, string email, string celular)
@@ -30,6 +33,12 @@ namespace DabbawallasBusiness.Classes
             SupervisorAsociado = new Supervisor(idSupervisor);
         }
 
+        //public Supervisor getLessStressedsupervisor ()
+        //{
+        //    int idLessStressedSupervisor = Connection.DabbawallaDB.SUPERVISOR.Count(x => )
+        //    return new Supervisor
+        //}
+
         public bool Read()
         {
             try
@@ -37,7 +46,7 @@ namespace DabbawallasBusiness.Classes
                 DABBAWALLA dab = Connection.DabbawallaDB.DABBAWALLA.First(dabba => dabba.ID_DABBAWALLA == IdDabbawalla);
                 IdUsuario = dab.ID_USUARIO.Value;
                 ReadUser();
-                SupervisorAsociado = new Supervisor(dab.ID_USUARIO.Value);
+                SupervisorAsociado = new Supervisor(dab.ID_SUPERVISOR_ASOCIADO.Value);
                 return true;
             }
             catch (Exception e)

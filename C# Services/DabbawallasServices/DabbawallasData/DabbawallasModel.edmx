@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DABBAWALLASModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DABBAWALLASModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ALERTA">
           <Key>
             <PropertyRef Name="ID_ALERTA" />
@@ -135,6 +135,24 @@
           </Key>
           <Property Name="ID_ZONA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ZONA" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DABBAWALLA.dbo.VISTA_INFORMACION_CLIENTES_SUSCRITOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VISTA_INFORMACION_CLIENTES_SUSCRITOS">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+            <PropertyRef Name="USERNAME_CLIENTE" />
+            <PropertyRef Name="ID_DABBAWALLA" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+          <Property Name="USERNAME_CLIENTE" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DIRECCION_HOGAR" Type="varchar" MaxLength="500" />
+          <Property Name="COMUNA_HOGAR" Type="varchar" MaxLength="255" />
+          <Property Name="DIRECCION_TRABAJO" Type="varchar" MaxLength="500" />
+          <Property Name="COMUNA_TRABAJO" Type="varchar" MaxLength="255" />
+          <Property Name="ID_DABBAWALLA" Type="int" Nullable="false" />
+          <Property Name="ID_SUPERVISOR" Type="int" />
+          <Property Name="ZONA_SUPERVISOR" Type="nvarchar" MaxLength="5" />
         </EntityType>
         <Association Name="FK_ALERTA_CLIENTE">
           <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
@@ -356,6 +374,19 @@
           <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ZONA" EntityType="Self.ZONA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VISTA_INFORMACION_CLIENTES_SUSCRITOS" EntityType="Self.VISTA_INFORMACION_CLIENTES_SUSCRITOS" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VISTA_INFORMACION_CLIENTES_SUSCRITOS].[ID_CLIENTE] AS [ID_CLIENTE], 
+    [VISTA_INFORMACION_CLIENTES_SUSCRITOS].[USERNAME_CLIENTE] AS [USERNAME_CLIENTE], 
+    [VISTA_INFORMACION_CLIENTES_SUSCRITOS].[DIRECCION_HOGAR] AS [DIRECCION_HOGAR], 
+    [VISTA_INFORMACION_CLIENTES_SUSCRITOS].[COMUNA_HOGAR] AS [COMUNA_HOGAR], 
+    [VISTA_INFORMACION_CLIENTES_SUSCRITOS].[DIRECCION_TRABAJO] AS [DIRECCION_TRABAJO], 
+    [VISTA_INFORMACION_CLIENTES_SUSCRITOS].[COMUNA_TRABAJO] AS [COMUNA_TRABAJO], 
+    [VISTA_INFORMACION_CLIENTES_SUSCRITOS].[ID_DABBAWALLA] AS [ID_DABBAWALLA], 
+    [VISTA_INFORMACION_CLIENTES_SUSCRITOS].[ID_SUPERVISOR] AS [ID_SUPERVISOR], 
+    [VISTA_INFORMACION_CLIENTES_SUSCRITOS].[ZONA_SUPERVISOR] AS [ZONA_SUPERVISOR]
+    FROM [dbo].[VISTA_INFORMACION_CLIENTES_SUSCRITOS] AS [VISTA_INFORMACION_CLIENTES_SUSCRITOS]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_ALERTA_CLIENTE" Association="Self.FK_ALERTA_CLIENTE">
             <End Role="CLIENTE" EntitySet="CLIENTE" />
             <End Role="ALERTA" EntitySet="ALERTA" />
@@ -425,8 +456,7 @@
             <End Role="USUARIO" EntitySet="USUARIO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DABBAWALLASModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -883,7 +913,24 @@
             <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
             <End Role="USUARIO" EntitySet="USUARIO" />
           </AssociationSet>
+          <EntitySet Name="VISTA_INFORMACION_CLIENTES_SUSCRITOS" EntityType="DABBAWALLASModel.VISTA_INFORMACION_CLIENTES_SUSCRITOS" />
         </EntityContainer>
+        <EntityType Name="VISTA_INFORMACION_CLIENTES_SUSCRITOS">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+            <PropertyRef Name="USERNAME_CLIENTE" />
+            <PropertyRef Name="ID_DABBAWALLA" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="USERNAME_CLIENTE" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION_HOGAR" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="COMUNA_HOGAR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION_TRABAJO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="COMUNA_TRABAJO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ID_DABBAWALLA" Type="Int32" Nullable="false" />
+          <Property Name="ID_SUPERVISOR" Type="Int32" />
+          <Property Name="ZONA_SUPERVISOR" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1033,6 +1080,21 @@
               <MappingFragment StoreEntitySet="ZONA">
                 <ScalarProperty Name="ID_ZONA" ColumnName="ID_ZONA" />
                 <ScalarProperty Name="ZONA1" ColumnName="ZONA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VISTA_INFORMACION_CLIENTES_SUSCRITOS">
+            <EntityTypeMapping TypeName="DABBAWALLASModel.VISTA_INFORMACION_CLIENTES_SUSCRITOS">
+              <MappingFragment StoreEntitySet="VISTA_INFORMACION_CLIENTES_SUSCRITOS">
+                <ScalarProperty Name="ZONA_SUPERVISOR" ColumnName="ZONA_SUPERVISOR" />
+                <ScalarProperty Name="ID_SUPERVISOR" ColumnName="ID_SUPERVISOR" />
+                <ScalarProperty Name="ID_DABBAWALLA" ColumnName="ID_DABBAWALLA" />
+                <ScalarProperty Name="COMUNA_TRABAJO" ColumnName="COMUNA_TRABAJO" />
+                <ScalarProperty Name="DIRECCION_TRABAJO" ColumnName="DIRECCION_TRABAJO" />
+                <ScalarProperty Name="COMUNA_HOGAR" ColumnName="COMUNA_HOGAR" />
+                <ScalarProperty Name="DIRECCION_HOGAR" ColumnName="DIRECCION_HOGAR" />
+                <ScalarProperty Name="USERNAME_CLIENTE" ColumnName="USERNAME_CLIENTE" />
+                <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

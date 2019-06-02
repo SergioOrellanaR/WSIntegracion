@@ -7,7 +7,7 @@ using DabbawallasData;
 
 namespace DabbawallasBusiness.Classes
 {
-    class Cliente : Usuario
+    public class Cliente : Usuario
     {
         private const int ClienteTypeId = 1;
         public int IdCliente { get; set; }
@@ -25,8 +25,11 @@ namespace DabbawallasBusiness.Classes
 
         public Cliente(int idCliente)
         {
-            IdCliente = IdCliente;
-            Read();
+            IdCliente = idCliente;
+            if (Read() == false)
+            {
+                IdCliente = -1;
+            }
         }
 
         public Cliente(string direccionHogar, string direccionTrabajo, int idComunaHogar, int idComunaTrabajo, int idEstadoSuscripcion, int idDabbawalla,
@@ -69,6 +72,7 @@ namespace DabbawallasBusiness.Classes
                 {
                     CLIENTE cli = new CLIENTE
                     {
+                        ID_USUARIO = IdUsuario,
                         DIRECCION_HOGAR = DireccionHogar,
                         DIRECCION_TRABAJO = DireccionTrabajo,
                         ID_COMUNA_HOGAR = IdComunaHogar,

@@ -40,5 +40,6 @@ namespace DabbawallasData
         public virtual DbSet<TIPO_USUARIO> TIPO_USUARIO { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }
         public virtual DbSet<ZONA> ZONA { get; set; }
+        public virtual DbSet<VISTA_INFORMACION_CLIENTES_SUSCRITOS> VISTA_INFORMACION_CLIENTES_SUSCRITOS { get; set; }
     }
 }

@@ -104,6 +104,7 @@ namespace DabbawallasBusiness.Classes
                     };
                     Connection.DabbawallaDB.USUARIO.Add(user);
                     Connection.DabbawallaDB.SaveChanges();
+                    IdUsuario = user.ID_USUARIO;
                     return true;
                 }
             }

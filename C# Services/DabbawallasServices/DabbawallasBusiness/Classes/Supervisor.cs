@@ -7,7 +7,7 @@ using DabbawallasData;
 
 namespace DabbawallasBusiness.Classes
 {
-    class Supervisor : Usuario
+    public class Supervisor : Usuario
     {
         private const int SupervisorTypeId = 3;
         public int IdSupervisor { get; set; }
@@ -15,14 +15,36 @@ namespace DabbawallasBusiness.Classes
 
         public Supervisor(int idSupervisor)
         {
-            IdSupervisor = IdSupervisor;
-            Read();
+            IdSupervisor = idSupervisor;
+            if (Read() == false)
+            {
+                IdSupervisor = -1;
+            }
         }
 
         public Supervisor(int idzona, string username, string password, string nombre, string apellido, string email, string celular) 
             : base(SupervisorTypeId, username,password,nombre,apellido,email,celular)
         {
             IdZona = idzona;
+        }
+
+        public Supervisor(string nombreZona, string username, string password, string nombre, string apellido, string email, string celular)
+            : base(SupervisorTypeId, username, password, nombre, apellido, email, celular)
+        {
+            IdZona = GetIdZonaByName(nombreZona);
+        }
+
+        public int GetIdZonaByName (string zona)
+        {
+            if (Enum.TryParse(zona, out Zona zonaID) == true)
+            {
+               return (int)zonaID;
+            }
+            else
+            {
+               return -1;
+            }
+                
         }
 
         public bool Read()

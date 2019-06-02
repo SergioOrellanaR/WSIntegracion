@@ -108,6 +108,9 @@
     <Compile Include="USUARIO.cs">
       <DependentUpon>DabbawallasModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="VISTA_INFORMACION_CLIENTES_SUSCRITOS.cs">
+      <DependentUpon>DabbawallasModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ZONA.cs">
       <DependentUpon>DabbawallasModel.tt</DependentUpon>
     </Compile>

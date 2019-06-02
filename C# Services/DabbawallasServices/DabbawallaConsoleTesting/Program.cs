@@ -11,8 +11,10 @@ namespace DabbawallaConsoleTesting
     {
         static void Main(string[] args)
         {
-            Usuario usuario = new Usuario(1);
-            Console.WriteLine(usuario.Nombre);
+            //Usuario usuario = new Usuario(1);
+            //Console.WriteLine(usuario.Nombre);
+            Supervisor sup = new Supervisor("B","asdad","ggggg","aaaa","ssssss","aaaaaa","3333333");
+            Console.WriteLine(sup.IdZona);
             Console.ReadKey();
             Console.Clear();
             //Usuario usuario2 = new Usuario(2, "Memazo", "memito", "asdas", "grineer", "123@gmail.com", "1324312");
