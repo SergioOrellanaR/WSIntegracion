@@ -1,0 +1,19 @@
+CREATE VIEW VISTA_INFORMACION_CLIENTES_SUSCRITOS as 
+select 
+cl.id_cliente as ID_CLIENTE,
+usr.USERNAME as USERNAME_CLIENTE,
+cl.direccion_hogar as DIRECCION_HOGAR,
+comhogar.comuna as COMUNA_HOGAR,
+cl.direccion_trabajo as DIRECCION_TRABAJO,
+comtrabajo.comuna as COMUNA_TRABAJO,
+dab.ID_DABBAWALLA as ID_DABBAWALLA,
+dab.ID_SUPERVISOR_ASOCIADO as ID_SUPERVISOR,
+z.ZONA as ZONA_SUPERVISOR
+from dbo.CLIENTE as cl
+join dbo.USUARIO as usr on (usr.ID_USUARIO = cl.id_usuario)
+join dbo.comuna as comhogar on (comhogar.id_comuna = cl.id_comuna_hogar)
+join dbo.comuna as comtrabajo on (comtrabajo.id_comuna = cl.id_comuna_trabajo)
+join dbo.dabbawalla as dab on (cl.id_dabbawalla_asociado = dab.ID_DABBAWALLA)
+join dbo.supervisor as sup on (dab.id_supervisor_asociado = sup.id_supervisor)
+join dbo.zona as z on (sup.id_zona = z.id_zona)
+where cl.id_estado_suscripcion = 1 
