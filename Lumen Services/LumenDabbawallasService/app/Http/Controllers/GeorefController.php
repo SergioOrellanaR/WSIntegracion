@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Laravel\Lumen\Routing\Controller as Controller;
 
 class GeorefController extends Controller
@@ -31,31 +32,49 @@ class GeorefController extends Controller
             }
         }
 
-
         if ($request->isJson())
         {
             $obJson = json_decode($request->getContent());
-            $calle= $obJson->calle;
-            $comuna= $obJson->comuna;
-            $ciudad= $obJson->ciudad;
-            $direccion= $calle . ' ' . ' ' . $comuna . ' ' . $ciudad . ' Chile';
-            $resp_geo = geocode($direccion);
-            $latitud = $resp_geo['lat'];
-            $longitud = $resp_geo['lng'];
+            $mensaje_errores = [];
+            $username = $obJson->username;
+            $usuarioValido = DB::table('dbo.VISTA_INFORMACION_CLIENTES_SUSCRITOS')->where('USERNAME_CLIENTE', '=', $username)->select()->first();
+            $direccionHogar= $usuarioValido->DIRECCION_HOGAR;
+            $comunaHogar= $usuarioValido->COMUNA_HOGAR;
+            $direccionTrabajo= $usuarioValido->DIRECCION_TRABAJO;
+            $comunaTrabajo= $usuarioValido->COMUNA_TRABAJO;
+            $hogarFinal=  $direccionHogar . ' ' . $comunaHogar . ' Chile';
+            $trabajoFinal= $direccionTrabajo . ' '. $comunaTrabajo .' Chile';
 
-            $array = [
+            $resp_geoHogar = geocode($hogarFinal);
+            $resp_geoTrabajo = geocode($trabajoFinal);
+            $latitudHogar = $resp_geoHogar['lat'];
+            $longitudHogar = $resp_geoHogar['lng'];
+            $latitudTrabajo = $resp_geoTrabajo['lat'];
+            $longitudTrabajo = $resp_geoTrabajo['lng'];
+
+            if(!$resp_geoHogar){
+                array_push($mensaje_errores, ['success' => false, 'error' => "Direccion del hogar no encontrado."]);
+            }
+
+            $arrayHogar = [
                 'success'=> true,
-                'latitud' => $latitud,
-                'longitud' => $longitud,
+                'latitud' => $latitudHogar,
+                'longitud' => $longitudHogar,
             ];
 
-            if(!$resp_geo){
-                return response()->json(['success' => false, 'error' => 'Dirección no encontrada'], 500);
+            $arrayTrabajo = [
+                'success'=> true,
+                'latitud' => $latitudTrabajo,
+                'longitud' => $longitudTrabajo,
+            ];
+
+            if($mensaje_errores==null){                
+                return  response()->json(['Hogar' => $arrayHogar, 'Trabajo' =>$arrayTrabajo],200);
             }else{
-                return  response()->json($array,200);
+                return response()->json(['success' => false, 'errores' => $mensaje_errores], 500);
             }
         } else {
-            return response()->json(['success' => false, 'error' => 'Debe ingresar un Json'], 400, []);
+            return response()->json(['success' => false, 'error' => 'Debe ingresar un Json'], 400);
         }
 
     }
