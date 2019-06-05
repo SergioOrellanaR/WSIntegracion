@@ -1,0 +1,890 @@
+{
+	"info": {
+		"_postman_id": "62d59ba9-948e-4d74-b43a-2430e477a462",
+		"name": "Servicios C# Dabbawalla",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:6970/dabbawallas/register/supervisor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNTU5NTA0OTgzLCJleHAiOjE1NTk1MDY3ODMsImlhdCI6MTU1OTUwNDk4MywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo2OTcwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo2OTcwIn0.o8Zxcb5OvP5pL9PhDUYdNja3CxhhN5J7NPYFhAT7Xik",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Username\":\"Sprohh\",\r\n\"Password\":\"hola123\",\r\n\"Nombre\":\"Brayan\",\r\n\"Apellido\":\"Mendez\",\r\n\"Email\":\"bramenfue@gmail.com\",\r\n\"Celular\":\"+56995285475\",\r\n\"Zona\":\"B\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6970/dabbawallas/register/supervisor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6970",
+					"path": [
+						"dabbawallas",
+						"register",
+						"supervisor"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "1663090e-113f-411c-b8c4-af3b018e95ce",
+					"name": "http://localhost:6970/dabbawallas/register/supervisor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNTU5NTA0OTgzLCJleHAiOjE1NTk1MDY3ODMsImlhdCI6MTU1OTUwNDk4MywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo2OTcwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo2OTcwIn0.o8Zxcb5OvP5pL9PhDUYdNja3CxhhN5J7NPYFhAT7Xik",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"Username\":\"Sprohh\",\r\n\"Password\":\"hola123\",\r\n\"Nombre\":\"Brayan\",\r\n\"Apellido\":\"Mendez\",\r\n\"Email\":\"bramenfue@gmail.com\",\r\n\"Celular\":\"+56995285475\",\r\n\"Zona\":\"B\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:6970/dabbawallas/register/supervisor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6970",
+							"path": [
+								"dabbawallas",
+								"register",
+								"supervisor"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jun 2019 01:17:21 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "-1",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache",
+							"name": "Pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319",
+							"name": "X-AspNet-Version",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?QzpcVXNlcnNcb3JlbGxcRGVza3RvcFxXU0ludGVncmFjaW9uXEMjIFNlcnZpY2VzXERhYmJhd2FsbGFzU2VydmljZXNcRGFiYmF3YWxsYXNSRVNUXGRhYmJhd2FsbGFzXHJlZ2lzdGVyXHN1cGVydmlzb3I=?=",
+							"name": "X-SourceFiles",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/ssff-rest-api",
+							"secure": false,
+							"value": "70F66AB48E347D0586433A730F1E84BD",
+							"key": "JSESSIONID"
+						},
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "57F57E34D61151749BA0E615D7287995",
+							"key": "JSESSIONID"
+						}
+					],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "http://localhost:6970/dabbawallas/register/dabbawalla",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Username\":\"ChinoRios\",\r\n\"Password\":\"elpastoespalasvacas\",\r\n\"Nombre\":\"Marcelo\",\r\n\"Apellido\":\"Ríos\",\r\n\"Email\":\"Chinoelnumero1@chino.com\",\r\n\"Celular\":\"+56960606060\",\r\n\"IdSupervisorAsociado\":54\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6970/dabbawallas/register/dabbawalla",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6970",
+					"path": [
+						"dabbawallas",
+						"register",
+						"dabbawalla"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "cc0f725c-b5dc-4c16-bf61-31caff7f8826",
+					"name": "http://localhost:6970/dabbawallas/register/dabbawalla",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"Username\":\"ChinoRios\",\r\n\"Password\":\"elpastoespalasvacas\",\r\n\"Nombre\":\"Marcelo\",\r\n\"Apellido\":\"Ríos\",\r\n\"Email\":\"Chinoelnumero1@chino.com\",\r\n\"Celular\":\"+56960606060\",\r\n\"IdSupervisorAsociado\":54\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:6970/dabbawallas/register/dabbawalla",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6970",
+							"path": [
+								"dabbawallas",
+								"register",
+								"dabbawalla"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Jun 2019 22:17:58 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "-1",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache",
+							"name": "Pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319",
+							"name": "X-AspNet-Version",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?QzpcVXNlcnNcb3JlbGxcRGVza3RvcFxXU0ludGVncmFjaW9uXEMjIFNlcnZpY2VzXERhYmJhd2FsbGFzU2VydmljZXNcRGFiYmF3YWxsYXNSRVNUXGRhYmJhd2FsbGFzXHJlZ2lzdGVyXGRhYmJhd2FsbGE=?=",
+							"name": "X-SourceFiles",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/ssff-rest-api",
+							"secure": false,
+							"value": "70F66AB48E347D0586433A730F1E84BD",
+							"key": "JSESSIONID"
+						},
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "57F57E34D61151749BA0E615D7287995",
+							"key": "JSESSIONID"
+						}
+					],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "http://localhost:6970/dabbawallas/register/cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Username\":\"Claudiowl\",\r\n   \"Password\":\"123456\",\r\n   \"Nombre\":\"Claudio\",\r\n   \"Apellido\":\"Ríos\",\r\n   \"Email\":\"claudiowl@gmail.com\",\r\n   \"Celular\":\"+56949248516\",\r\n   \"DireccionHogar\":\"Hugo Bravo 607\",\r\n   \"DireccionTrabajo\":\"Encarnacion 4377\",\r\n   \"IdComunaHogar\":2,\r\n   \"IdComunaTrabajo\":2,\r\n   \"IdDabbawalla\":501\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6970/dabbawallas/register/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6970",
+					"path": [
+						"dabbawallas",
+						"register",
+						"cliente"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "fc68999f-151e-4898-b924-90b2cc1fc509",
+					"name": "http://localhost:6970/dabbawallas/register/cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"Username\":\"Claudiowl\",\r\n   \"Password\":\"123456\",\r\n   \"Nombre\":\"Claudio\",\r\n   \"Apellido\":\"Ríos\",\r\n   \"Email\":\"claudiowl@gmail.com\",\r\n   \"Celular\":\"+56949248516\",\r\n   \"DireccionHogar\":\"Hugo Bravo 607\",\r\n   \"DireccionTrabajo\":\"Encarnacion 4377\",\r\n   \"IdComunaHogar\":2,\r\n   \"IdComunaTrabajo\":2,\r\n   \"IdDabbawalla\":501\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:6970/dabbawallas/register/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6970",
+							"path": [
+								"dabbawallas",
+								"register",
+								"cliente"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Jun 2019 23:19:38 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "-1",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache",
+							"name": "Pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319",
+							"name": "X-AspNet-Version",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?QzpcVXNlcnNcb3JlbGxcRGVza3RvcFxXU0ludGVncmFjaW9uXEMjIFNlcnZpY2VzXERhYmJhd2FsbGFzU2VydmljZXNcRGFiYmF3YWxsYXNSRVNUXGRhYmJhd2FsbGFzXHJlZ2lzdGVyXGNsaWVudGU=?=",
+							"name": "X-SourceFiles",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/ssff-rest-api",
+							"secure": false,
+							"value": "70F66AB48E347D0586433A730F1E84BD",
+							"key": "JSESSIONID"
+						},
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "57F57E34D61151749BA0E615D7287995",
+							"key": "JSESSIONID"
+						}
+					],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "http://localhost:6970/dabbawallas/login/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Username\":\"claudiowl\",\n\t\"Password\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:6970/dabbawallas/login/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6970",
+					"path": [
+						"dabbawallas",
+						"login",
+						"authenticate"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "200792e7-a39d-45b9-a7ea-914611772421",
+					"name": "http://localhost:6970/dabbawallas/login/authenticate",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Username\":\"claudiowl\",\n\t\"Password\":\"123456\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:6970/dabbawallas/login/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6970",
+							"path": [
+								"dabbawallas",
+								"login",
+								"authenticate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Content-Length",
+							"value": "371",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jun 2019 11:26:19 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "-1",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache",
+							"name": "Pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319",
+							"name": "X-AspNet-Version",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?QzpcVXNlcnNcb3JlbGxcRGVza3RvcFxXU0ludGVncmFjaW9uXEMjIFNlcnZpY2VzXERhYmJhd2FsbGFzU2VydmljZXNcRGFiYmF3YWxsYXNSRVNUXGRhYmJhd2FsbGFzXGxvZ2luXGF1dGhlbnRpY2F0ZQ==?=",
+							"name": "X-SourceFiles",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/ssff-rest-api",
+							"secure": false,
+							"value": "70F66AB48E347D0586433A730F1E84BD",
+							"key": "JSESSIONID"
+						},
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "57F57E34D61151749BA0E615D7287995",
+							"key": "JSESSIONID"
+						}
+					],
+					"body": "{\"IdTipoUsuario\":1,\"IdUsuario\":5008,\"Username\":\"Claudiowl\",\"Nombre\":\"Claudio\",\"Apellido\":\"Ríos\",\"JWT\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImNsYXVkaW93bCIsIm5iZiI6MTU1OTczMzk3OSwiZXhwIjoxNTU5NzM1Nzc5LCJpYXQiOjE1NTk3MzM5NzksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6Njk3MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6Njk3MCJ9.H0E1a0kWm66Oen9QC3oVtw81om1SNVMa0XbJSfsJjSM\"}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:6970/dabbawallas/clientes/abrir_ticket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"UsernameClienteEnvia\": \"Claudiowl\",\r\n\t\"UsernameClienteRecibe\":\"Tufon\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:6970/dabbawallas/clientes/abrir_ticket",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6970",
+					"path": [
+						"dabbawallas",
+						"clientes",
+						"abrir_ticket"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "a01ebd84-61fd-4737-91d9-16b639ab0d2f",
+					"name": "http://localhost:6970/dabbawallas/clientes/abrir_ticket",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"UsernameClienteEnvia\": \"Claudiowl\",\r\n\t\"UsernameClienteRecibe\":\"Tufon\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:6970/dabbawallas/clientes/abrir_ticket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6970",
+							"path": [
+								"dabbawallas",
+								"clientes",
+								"abrir_ticket"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Content-Length",
+							"value": "479",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jun 2019 12:12:02 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "-1",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache",
+							"name": "Pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319",
+							"name": "X-AspNet-Version",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?QzpcVXNlcnNcb3JlbGxcRGVza3RvcFxXU0ludGVncmFjaW9uXEMjIFNlcnZpY2VzXERhYmJhd2FsbGFzU2VydmljZXNcRGFiYmF3YWxsYXNSRVNUXGRhYmJhd2FsbGFzXGNsaWVudGVzXGFicmlyX3RpY2tldA==?=",
+							"name": "X-SourceFiles",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/ssff-rest-api",
+							"secure": false,
+							"value": "70F66AB48E347D0586433A730F1E84BD",
+							"key": "JSESSIONID"
+						},
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "57F57E34D61151749BA0E615D7287995",
+							"key": "JSESSIONID"
+						}
+					],
+					"body": "{\"IdTicket\":1,\"FechaDeAperturaDeTicket\":\"06/05/2019 08:11\",\"IdClienteEnvia\":4503,\"UsernameClienteEnvia\":\"Claudiowl\",\"DireccionHogarClienteEnvia\":\"Hugo Bravo 607\",\"IdComunaHogarClienteEnvia\":2,\"ComunaHogarClienteEnvia\":\"Maipu\",\"IdDabbawallaEncargado\":501,\"UsernameDabbawallaEncargado\":\"ChinoRios\",\"IdClienteRecibe\":4502,\"UsernameClienteRecibe\":\"Tufon\",\"DireccionTrabajoClienteRecibe\":\"Hnos Carrera 2540\",\"IdComunaTrabajoClienteRecibe\":1,\"ComunaTrabajoClienteRecibe\":\"Providencia\"}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:6970/dabbawallas/clientes/enviar_alerta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\":\"claudiowl\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:6970/dabbawallas/clientes/enviar_alerta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6970",
+					"path": [
+						"dabbawallas",
+						"clientes",
+						"enviar_alerta"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "05bd7eb5-4fa9-460b-abb1-c44882c1fa81",
+					"name": "http://localhost:6970/dabbawallas/clientes/enviar_alerta",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\":\"claudiowl\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:6970/dabbawallas/clientes/enviar_alerta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6970",
+							"path": [
+								"dabbawallas",
+								"clientes",
+								"enviar_alerta"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Content-Length",
+							"value": "278",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jun 2019 12:14:44 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "-1",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache",
+							"name": "Pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319",
+							"name": "X-AspNet-Version",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?QzpcVXNlcnNcb3JlbGxcRGVza3RvcFxXU0ludGVncmFjaW9uXEMjIFNlcnZpY2VzXERhYmJhd2FsbGFzU2VydmljZXNcRGFiYmF3YWxsYXNSRVNUXGRhYmJhd2FsbGFzXGNsaWVudGVzXGVudmlhcl9hbGVydGE=?=",
+							"name": "X-SourceFiles",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/ssff-rest-api",
+							"secure": false,
+							"value": "70F66AB48E347D0586433A730F1E84BD",
+							"key": "JSESSIONID"
+						},
+						{
+							"expires": "Tue Jan 19 2038 00:14:07 GMT-0300 (Hora verano Sudamérica Pacífico)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "57F57E34D61151749BA0E615D7287995",
+							"key": "JSESSIONID"
+						}
+					],
+					"body": "{\"IdClienteAlerta\":4503,\"UsernameClienteAlerta\":\"Claudiowl\",\"IdDabbawallaAlertado\":501,\"UsernameDabbawallaAlertado\":\"ChinoRios\",\"IdSupervisorRecibeAlerta\":54,\"UsernameSupervisorAlertado\":\"Zerocl\",\"CelularSupervisorAlertado\":\"+56974241612\",\"FechaInicioAlerta\":\"06/05/2019 08:14\"}"
+				}
+			]
+		}
+	]
+}

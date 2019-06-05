@@ -55,6 +55,7 @@
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Exceptions\EmptyStringException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
@@ -65,6 +66,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\DabbawallasData\ConnectionString.config">
+      <Link>ConnectionString.config</Link>
+    </None>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />

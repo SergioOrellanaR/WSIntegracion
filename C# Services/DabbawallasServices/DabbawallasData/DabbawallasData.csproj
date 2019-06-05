@@ -121,6 +121,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DabbawallasModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ConnectionString.config" />
     <None Include="DabbawallasModel.edmx.diagram">
       <DependentUpon>DabbawallasModel.edmx</DependentUpon>
     </None>

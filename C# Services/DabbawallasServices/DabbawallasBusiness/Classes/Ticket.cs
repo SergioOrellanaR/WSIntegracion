@@ -7,7 +7,7 @@ using DabbawallasData;
 
 namespace DabbawallasBusiness.Classes
 {
-    class Ticket
+    public class Ticket
     {
         public int IdTicket { get; set; }
         public Cliente ClienteEnvia { get; set; }
@@ -20,9 +20,19 @@ namespace DabbawallasBusiness.Classes
         public Ticket(int idClienteEnvia, int idClienteRecibe)
         {
             int IdEstadoTicketAbierto = 1;
-
             ClienteEnvia = new Cliente(idClienteEnvia);
             ClienteRecibe = new Cliente(idClienteRecibe);
+            IdEstado = IdEstadoTicketAbierto;
+            FechaInicio = DateTime.Now;
+            FechaFinal = null;
+            Calificacion = 0;
+        }
+
+        public Ticket(string usernameClienteEnvia, string usernameClienteRecibe)
+        {
+            int IdEstadoTicketAbierto = 1;
+            ClienteEnvia = new Cliente().SearchClientByUsername(usernameClienteEnvia);
+            ClienteRecibe = new Cliente().SearchClientByUsername(usernameClienteRecibe);
             IdEstado = IdEstadoTicketAbierto;
             FechaInicio = DateTime.Now;
             FechaFinal = null;
@@ -33,17 +43,39 @@ namespace DabbawallasBusiness.Classes
         {
             try
             {
-                TICKET ticket = new TICKET
+                int searchClientError = -1;
+                if (ClienteEnvia.IdCliente != searchClientError && ClienteRecibe.IdCliente != searchClientError)
                 {
-                    ID_CLIENTE_ENVIA = ClienteEnvia.IdCliente,
-                    ID_CLIENTE_RECIBE = ClienteRecibe.IdCliente,
-                    ID_ESTADO = IdEstado,
-                    FECHA_APERTURA = FechaInicio,
-                    FECHA_CLAUSURA = FechaFinal,
-                    CALIFICACION_SERVICIO = Calificacion
-                };
-                Connection.DabbawallaDB.TICKET.Add(ticket);
-                Connection.DabbawallaDB.SaveChanges();
+                    TICKET ticket = new TICKET
+                    {
+                        ID_CLIENTE_ENVIA = ClienteEnvia.IdCliente,
+                        ID_CLIENTE_RECIBE = ClienteRecibe.IdCliente,
+                        ID_ESTADO = IdEstado,
+                        FECHA_APERTURA = FechaInicio,
+                        FECHA_CLAUSURA = FechaFinal,
+                        CALIFICACION_SERVICIO = Calificacion
+                    };
+                    Connection.DabbawallaDB.TICKET.Add(ticket);
+                    Connection.DabbawallaDB.SaveChanges();
+                    IdTicket = ticket.ID_TICKET;
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Error en busqueda de cliente");
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool ReceiverUserHaveOpenTickets()
+        {
+            try
+            {
+                Connection.DabbawallaDB.TICKET.First(receiver => ClienteRecibe.IdCliente == receiver.ID_CLIENTE_RECIBE);
                 return true;
             }
             catch (Exception e)

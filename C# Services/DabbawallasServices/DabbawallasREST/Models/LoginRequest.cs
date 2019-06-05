@@ -9,5 +9,14 @@ namespace DabbawallasREST.Models
     {
         public string Username { get; set; }
         public string Password { get; set; }
+
+        public bool PropertiesAreNullOrEmpty()
+        {
+            if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
+            {
+                return true; 
+            }
+            return false;
+        }
     }
 }

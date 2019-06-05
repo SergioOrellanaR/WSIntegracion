@@ -16,36 +16,43 @@ namespace DabbawallasREST.Controllers
     [RoutePrefix("dabbawallas/login")]
     public class LoginController : ApiController
     {
-        [HttpGet]
-        [Route("echoping")]
-        public IHttpActionResult EchoPing()
-        {
-            return Ok(true);
-        }
+        //[HttpGet]
+        //[Route("echoping")]
+        //public IHttpActionResult EchoPing()
+        //{
+        //    return Ok(true);
+        //}
 
-        [HttpGet]
-        [Route("echouser")]
-        public IHttpActionResult EchoUser()
-        {
-            var identity = Thread.CurrentPrincipal.Identity;
-            return Ok($" IPrincipal-user: {identity.Name} - IsAuthenticated: {identity.IsAuthenticated}");
-        }
+        //[HttpGet]
+        //[Route("echouser")]
+        //public IHttpActionResult EchoUser()
+        //{
+        //    var identity = Thread.CurrentPrincipal.Identity;
+        //    return Ok($" IPrincipal-user: {identity.Name} - IsAuthenticated: {identity.IsAuthenticated}");
+        //}
 
         [HttpPost]
         [Route("authenticate")]
         public IHttpActionResult Authenticate(LoginRequest login)
         {
-            if (login == null)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            if (login == null || login.PropertiesAreNullOrEmpty())
+                return BadRequest();
 
-            //TODO: Validate credentials Correctly, this code is only for demo !!
             Usuario user = new Usuario();
             bool isCredentialValid = user.Login(login.Username, login.Password);
 
             if (isCredentialValid)
             {
                 var token = TokenGenerator.GenerateTokenJwt(login.Username);
-                return Ok(token);
+                Models.Responses.LoginResponse response = new Models.Responses.LoginResponse() {
+                    IdTipoUsuario = user.IdTipoUsuario.Value,
+                    IdUsuario = user.IdUsuario,
+                    Username = user.Username,
+                    Nombre = user.Nombre,
+                    Apellido = user.Apellido,
+                    JWT = token
+                };
+                return Ok(response);
             }
             else
             {

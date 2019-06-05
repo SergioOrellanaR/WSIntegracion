@@ -104,24 +104,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\OpenTicketController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
-    <Compile Include="Controllers\SendAlertController.cs" />
     <Compile Include="Controllers\TokenValidationHandler.cs" />
     <Compile Include="Controllers\TokenGenerator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GenericClientRequest.cs" />
     <Compile Include="Models\LoginRequest.cs" />
     <Compile Include="Models\OpenTicketRequest.cs" />
     <Compile Include="Models\RegisterClientRequest.cs" />
     <Compile Include="Models\RegisterDabbawallaRequest.cs" />
     <Compile Include="Models\RegisterSupervisorRequest.cs" />
+    <Compile Include="Models\Responses\AlertResponse.cs" />
+    <Compile Include="Models\Responses\LoginResponse.cs" />
+    <Compile Include="Models\Responses\TicketResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\DabbawallasData\ConnectionString.config">
+      <Link>ConnectionString.config</Link>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

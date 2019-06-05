@@ -44,6 +44,28 @@ namespace DabbawallasBusiness.Classes
             ReadUser();
         }
 
+        public bool ReadUserByUsername(string username)
+        {
+            try
+            {
+                USUARIO user = Connection.DabbawallaDB.USUARIO.First(usuario => usuario.USERNAME == username);
+                IdUsuario = user.ID_USUARIO;
+                IdTipoUsuario = user.ID_TIPO_USUARIO;
+                Username = user.USERNAME;
+                Password = user.PASSWORD;
+                Nombre = user.NOMBRE;
+                Apellido = user.APELLIDO;
+                Email = user.EMAIL;
+                Celular = user.CELULAR;
+                return true;
+            }
+            catch (Exception e)
+            {
+                string mes = e.Message;
+                return false;
+            }
+        }
+
         public bool ReadUser()
         {
             try

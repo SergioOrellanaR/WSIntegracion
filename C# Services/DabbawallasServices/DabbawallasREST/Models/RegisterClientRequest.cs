@@ -18,5 +18,21 @@ namespace DabbawallasREST.Models
         public int IdComunaHogar { get; set; }
         public int IdComunaTrabajo { get; set; }
         public int IdDabbawalla { get; set; }
+
+        public bool PropertiesAreNullOrEmpty()
+        {
+            if (string.IsNullOrEmpty(Username) ||
+                string.IsNullOrEmpty(Password) ||
+                string.IsNullOrEmpty(Nombre) ||
+                string.IsNullOrEmpty(Apellido) ||
+                string.IsNullOrEmpty(Email) ||
+                string.IsNullOrEmpty(Celular) ||
+                string.IsNullOrEmpty(DireccionHogar) ||
+                string.IsNullOrEmpty(DireccionTrabajo))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

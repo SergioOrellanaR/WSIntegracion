@@ -18,7 +18,7 @@ namespace DabbawallasREST.Controllers
         public IHttpActionResult RegisterSupervisor(RegisterSupervisorRequest registerData)
         {
             int invalidZone = -1;
-            if (registerData == null)
+            if (registerData == null || registerData.PropertiesAreNullOrEmpty())
                 return BadRequest();
 
             Supervisor supervisor = new Supervisor(registerData.Zona, registerData.Username, registerData.Password,
@@ -39,7 +39,7 @@ namespace DabbawallasREST.Controllers
         public IHttpActionResult RegisterDabbawalla(RegisterDabbawallaRequest registerData)
         {
             int NotFoundSupervisor = -1;
-            if (registerData == null)
+            if (registerData == null || registerData.PropertiesAreNullOrEmpty())
                 return BadRequest();
 
             Dabbawalla dab = new Dabbawalla(registerData.IdSupervisorAsociado, registerData.Username, registerData.Password,
@@ -61,7 +61,7 @@ namespace DabbawallasREST.Controllers
         {
             int inactiveSuscription = 0;
             int invalidDabbawalla = -1;
-            if (registerData == null)
+            if (registerData == null || registerData.PropertiesAreNullOrEmpty())
                 return BadRequest();
 
             Cliente client = new Cliente(registerData.DireccionHogar, registerData.DireccionTrabajo, registerData.IdComunaHogar,

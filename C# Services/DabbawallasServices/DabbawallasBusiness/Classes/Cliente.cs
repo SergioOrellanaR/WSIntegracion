@@ -51,6 +51,7 @@ namespace DabbawallasBusiness.Classes
                 CLIENTE client = Connection.DabbawallaDB.CLIENTE.First(cl => cl.ID_CLIENTE == IdCliente);
                 IdUsuario = client.ID_USUARIO.Value;
                 ReadUser();
+                IdEstadoSuscripcion = client.ID_ESTADO_SUSCRIPCION.Value;
                 DireccionHogar = client.DIRECCION_HOGAR;
                 DireccionTrabajo = client.DIRECCION_TRABAJO;
                 IdComunaHogar = client.ID_COMUNA_HOGAR.Value;
@@ -59,6 +60,21 @@ namespace DabbawallasBusiness.Classes
                 return true;
             }
             catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool ActivateSuscription()
+        {
+            try
+            {
+                CLIENTE client = Connection.DabbawallaDB.CLIENTE.First(cl => cl.ID_CLIENTE == IdCliente);
+                client.ID_ESTADO_SUSCRIPCION = 1;
+                Connection.DabbawallaDB.SaveChanges();
+                return true;
+            }
+            catch (Exception)
             {
                 return false;
             }
@@ -97,14 +113,27 @@ namespace DabbawallasBusiness.Classes
 
         public Cliente SearchClientByUsername(string username)
         {
-            int UserId = Connection.DabbawallaDB.USUARIO.First(usr => usr.USERNAME.Equals(username, StringComparison.InvariantCultureIgnoreCase)).ID_USUARIO;
-            int clientId = Connection.DabbawallaDB.CLIENTE.First(cli => cli.ID_USUARIO == UserId).ID_CLIENTE;
-            return new Cliente(clientId);
+            try
+            {
+                int UserId = Connection.DabbawallaDB.USUARIO.First(usr => usr.USERNAME.Equals(username, StringComparison.InvariantCultureIgnoreCase)).ID_USUARIO;
+                int clientId = Connection.DabbawallaDB.CLIENTE.First(cli => cli.ID_USUARIO == UserId).ID_CLIENTE;
+                return new Cliente(clientId);
+            }
+            catch
+            {
+                int clientError = -1;
+                return new Cliente() { IdCliente = clientError};
+            }
         }
 
         public Supervisor AssociatedSupervisor()
         {
             return DabbawallaAsociado.SupervisorAsociado;
+        }
+
+        public string nombreComuna (int idComuna)
+        {
+            return Connection.DabbawallaDB.COMUNA.First(com => com.ID_COMUNA == idComuna).COMUNA1;
         }
     }
 }
