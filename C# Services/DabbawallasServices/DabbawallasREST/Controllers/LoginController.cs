@@ -41,10 +41,16 @@ namespace DabbawallasREST.Controllers
             Usuario user = new Usuario();
             bool isCredentialValid = user.Login(login.Username, login.Password);
 
+            return NewMethod(login, user, isCredentialValid);
+        }
+
+        private IHttpActionResult NewMethod(LoginRequest login, Usuario user, bool isCredentialValid)
+        {
             if (isCredentialValid)
             {
                 var token = TokenGenerator.GenerateTokenJwt(login.Username);
-                Models.Responses.LoginResponse response = new Models.Responses.LoginResponse() {
+                Models.Responses.LoginResponse response = new Models.Responses.LoginResponse()
+                {
                     IdTipoUsuario = user.IdTipoUsuario.Value,
                     IdUsuario = user.IdUsuario,
                     Username = user.Username,
