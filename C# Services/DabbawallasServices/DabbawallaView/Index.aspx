@@ -72,12 +72,14 @@
               <div class="input-field">
                 <i class="material-icons prefix">person</i>
                 <asp:TextBox ID="txUser"  type="text" placeholder="Username" runat="server"></asp:TextBox><br />
+                  <asp:RequiredFieldValidator ID="RequiredFieldUsername" runat="server" ErrorMessage="Se requiere que ingrese username" ControlToValidate="txUser"></asp:RequiredFieldValidator>
               </div>
               <br>
 
               <div class="input-field">
                 <i class="material-icons prefix">lock</i>
                 <asp:TextBox ID="txPass" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noMarr" type="password" placeholder="Contraseña" runat="server"></asp:TextBox> <br />
+                  <asp:RequiredFieldValidator ID="RequiredFieldPassword" runat="server" ErrorMessage="Se requiere que ingrese password" ControlToValidate="txPass"></asp:RequiredFieldValidator>
               </div>
               <br>
 
@@ -86,7 +88,7 @@
                 <label for="check">Remember Me</label>
               </div>
               <br>
-                <asp:Button type="submit" runat="server" Text="Ingresar" class="btn btn-large"/>                    
+                <asp:Button type="submit" runat="server" Text="Ingresar" class="btn btn-large" OnClick="Login"/>                    
           </div>
         </div>
     <!--   fin seccion login  -->
