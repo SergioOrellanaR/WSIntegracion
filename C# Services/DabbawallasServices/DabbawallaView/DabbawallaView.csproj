@@ -93,10 +93,18 @@
     <Content Include="RegistroCliente.aspx" />
     <Content Include="RegistroDabbawalla.aspx" />
     <Content Include="RegistroSupervisor.aspx" />
+    <Content Include="testpage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\RESTWebCaller.cs" />
+    <Compile Include="NormalMasterpage.Master.cs">
+      <DependentUpon>NormalMasterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NormalMasterpage.Master.designer.cs">
+      <DependentUpon>NormalMasterpage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,8 +134,16 @@
     <Compile Include="RegistroSupervisor.aspx.designer.cs">
       <DependentUpon>RegistroSupervisor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="testpage.aspx.cs">
+      <DependentUpon>testpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testpage.aspx.designer.cs">
+      <DependentUpon>testpage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="NormalMasterpage.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

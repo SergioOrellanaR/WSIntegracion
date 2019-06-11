@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistroCliente.aspx.cs" Inherits="DabbawallaView.RegistroCliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeBehind="RegistroCliente.aspx.cs" Inherits="DabbawallaView.RegistroCliente" %>
 
 <!DOCTYPE html>
 

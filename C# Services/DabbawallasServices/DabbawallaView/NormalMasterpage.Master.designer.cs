@@ -10,69 +10,78 @@
 namespace DabbawallaView {
     
     
-    public partial class Index {
+    public partial class DabbawallasMasterpage {
         
         /// <summary>
-        /// Control txUsername.
+        /// Control ContentPlaceHolderHead.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txUsername;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolderHead;
         
         /// <summary>
-        /// Control txPassword.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control txNombre.
+        /// Control txUser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txNombre;
+        protected global::System.Web.UI.WebControls.TextBox txUser;
         
         /// <summary>
-        /// Control txApellido.
+        /// Control RequiredFieldUsername.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txApellido;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldUsername;
         
         /// <summary>
-        /// Control txEmail.
+        /// Control txPass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txEmail;
+        protected global::System.Web.UI.WebControls.TextBox txPass;
         
         /// <summary>
-        /// Control txCelular.
+        /// Control RequiredFieldPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txCelular;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldPassword;
         
         /// <summary>
-        /// Control txIdSupervisor.
+        /// Control ContentPlaceHolder1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txIdSupervisor;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        
+        /// <summary>
+        /// Control ContentPlaceHolderScripts.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolderScripts;
     }
 }

@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NormalMasterpage.Master.cs" Inherits="DabbawallaView.DabbawallasMasterpage" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Dabbawallas - Chile</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<asp:ContentPlaceHolder ID="ContentPlaceHolderHead" runat="server">
+</asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="Index.aspx" class="brand-logo">Dabbaweas</a>
+      <ul class="right hide-on-med-and-down">
+          <a href="#login" class="waves-effect waves-light btn modal-trigger">Login</a>          
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Registro</a>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+          <a href="#login" class="waves-effect waves-light btn">Login</a>          
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      
+    </div>
+  </nav>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="RegistroCliente.aspx">Cliente</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><a href="RegistroSupervisor.aspx">Supervisor</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><a href="RegistroDabbawalla.aspx" >Dabbawalla</a></li>
+        <li class="divider" tabindex="-1"></li>
+   </ul>
+
+<!--   Login Section   -->        
+
+        <div id="login" class="modal ">
+          <h5 class="modal-close">&#10005;</h5>
+          <div class="modal-content center">
+            <h4>Inicio Sesión</h4>
+            <br>
+
+              <div class="input-field">
+                <i class="material-icons prefix">person</i>
+                <asp:TextBox ID="txUser"  type="text" placeholder="Username" runat="server"></asp:TextBox><br />
+                  <asp:RequiredFieldValidator ID="RequiredFieldUsername" runat="server" ErrorMessage="Se requiere que ingrese username" ControlToValidate="txUser"></asp:RequiredFieldValidator>
+              </div>
+              <br>
+
+              <div class="input-field">
+                <i class="material-icons prefix">lock</i>
+                <asp:TextBox ID="txPass" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noMarr" type="password" placeholder="Contraseña" runat="server"></asp:TextBox> <br />
+                  <asp:RequiredFieldValidator ID="RequiredFieldPassword" runat="server" ErrorMessage="Se requiere que ingrese password" ControlToValidate="txPass"></asp:RequiredFieldValidator>
+              </div>
+              <br>
+
+              <div class="left" style="margin-left:20px;">
+                <input type="checkbox" id="check">
+                <label for="check">Remember Me</label>
+              </div>
+              <br>
+                <asp:Button type="submit" runat="server" Text="Ingresar" class="btn btn-large" OnClick="Login"/>                    
+          </div>
+        </div>
+    <!--   fin seccion login  -->
+
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+</asp:ContentPlaceHolder>
+
+<footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Desarrollado por <a class="brown-text text-lighten-3" href="http://novasmart.com">NovaSmart</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!--  Scripts-->
+  <asp:ContentPlaceHolder ID="ContentPlaceHolderScripts" runat="server">
+  </asp:ContentPlaceHolder>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+    <script>
+        $(document).ready(function(){
+  		    $('.modal').modal();
+        });
+
+        $(document).ready(function(){
+            $('.tabs').tabs();
+        });
+        $('.dropdown-trigger').dropdown();
+    </script>
+        </form>
+  </body>
+
+</html>
