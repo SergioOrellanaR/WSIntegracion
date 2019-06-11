@@ -111,7 +111,7 @@
                           </div>
                           <div class="row">
                             <div class="input-field col s12">
-                              <asp:TextBox ID="txCelular"  type="number" placeholder="Celular" runat="server"></asp:TextBox> <br />
+                              <asp:TextBox ID="txCelular"  type="text" placeholder="Celular" runat="server"></asp:TextBox> <br />
                             </div>
                           </div>
                           <div class="row">

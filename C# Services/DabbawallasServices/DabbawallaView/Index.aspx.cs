@@ -60,15 +60,14 @@ namespace DabbawallaView
         protected void Login(object sender, EventArgs e)
         {
             string loginURL = "http://localhost:6970/dabbawallas/login/authenticate";
+
             LoginRequest loginRequest = new LoginRequest()
             {
                 Username = txUser.Text,
                 Password = txPass.Text
             };
 
-
             string jsonRequest = JsonConvert.SerializeObject(loginRequest);
-            //string jsonRequest = caller.ObjectToJson(loginRequest);
             string jsonResponse = caller.MethodCallerPOST(loginURL, jsonRequest);
 
             if (jsonResponse != null)
