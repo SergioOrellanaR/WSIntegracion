@@ -32,7 +32,7 @@ namespace DabbawallasBusiness.Classes
             }
         }
 
-        public Cliente(string direccionHogar, string direccionTrabajo, int idComunaHogar, int idComunaTrabajo, int idEstadoSuscripcion, int idDabbawalla,
+        public Cliente(string direccionHogar, string direccionTrabajo, int idComunaHogar, int idComunaTrabajo, int idEstadoSuscripcion,
             string username, string password, string nombre, string apellido, string email, string celular) 
             : base(ClienteTypeId, username, password, nombre, apellido, email, celular)
         {
@@ -41,7 +41,7 @@ namespace DabbawallasBusiness.Classes
             IdComunaHogar = idComunaHogar;
             IdComunaTrabajo = idComunaTrabajo;
             IdEstadoSuscripcion = idEstadoSuscripcion;
-            DabbawallaAsociado = new Dabbawalla(idDabbawalla);
+            DabbawallaAsociado = getLessAssociatedClientsDabbawallas();
         }
 
         public bool Read()
@@ -134,6 +134,25 @@ namespace DabbawallasBusiness.Classes
         public string nombreComuna (int idComuna)
         {
             return Connection.DabbawallaDB.COMUNA.First(com => com.ID_COMUNA == idComuna).COMUNA1;
+        }
+
+        public Dabbawalla getLessAssociatedClientsDabbawallas()
+        {
+            Dabbawalla dabbawalla;
+            try
+            {
+                int idDabbawalla = Connection.DabbawallaDB.VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA.OrderBy(x => x.Clientes_Asociados).First().ID_DABBAWALLA;
+                dabbawalla = new Dabbawalla(idDabbawalla);
+            }
+            catch
+            {
+                int idInvalidDabbawalla = -1;
+                dabbawalla = new Dabbawalla()
+                {
+                    IdDabbawalla = idInvalidDabbawalla
+                };
+            }
+            return dabbawalla;
         }
     }
 }

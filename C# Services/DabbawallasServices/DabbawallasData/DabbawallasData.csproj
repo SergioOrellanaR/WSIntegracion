@@ -108,6 +108,12 @@
     <Compile Include="USUARIO.cs">
       <DependentUpon>DabbawallasModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA.cs">
+      <DependentUpon>DabbawallasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR.cs">
+      <DependentUpon>DabbawallasModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="VISTA_INFORMACION_CLIENTES_SUSCRITOS.cs">
       <DependentUpon>DabbawallasModel.tt</DependentUpon>
     </Compile>
@@ -116,12 +122,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <EntityDeploy Include="DabbawallasModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DabbawallasModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ConnectionString.config" />
+    <None Include="ConnectionString.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="DabbawallasModel.edmx.diagram">
       <DependentUpon>DabbawallasModel.edmx</DependentUpon>
     </None>

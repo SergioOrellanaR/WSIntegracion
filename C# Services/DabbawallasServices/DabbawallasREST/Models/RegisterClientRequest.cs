@@ -17,7 +17,6 @@ namespace DabbawallasREST.Models
         public string DireccionTrabajo { get; set; }
         public int IdComunaHogar { get; set; }
         public int IdComunaTrabajo { get; set; }
-        public int IdDabbawalla { get; set; }
 
         public bool PropertiesAreNullOrEmpty()
         {

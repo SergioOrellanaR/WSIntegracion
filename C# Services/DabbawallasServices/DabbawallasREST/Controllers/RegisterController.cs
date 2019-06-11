@@ -42,7 +42,7 @@ namespace DabbawallasREST.Controllers
             if (registerData == null || registerData.PropertiesAreNullOrEmpty())
                 return BadRequest();
 
-            Dabbawalla dab = new Dabbawalla(registerData.IdSupervisorAsociado, registerData.Username, registerData.Password,
+            Dabbawalla dab = new Dabbawalla(registerData.Username, registerData.Password,
                 registerData.Nombre, registerData.Apellido, registerData.Email, registerData.Celular);
 
             if (dab.SupervisorAsociado.IdSupervisor != NotFoundSupervisor && dab.Create() == true)
@@ -64,8 +64,10 @@ namespace DabbawallasREST.Controllers
             if (registerData == null || registerData.PropertiesAreNullOrEmpty())
                 return BadRequest();
 
+            
+
             Cliente client = new Cliente(registerData.DireccionHogar, registerData.DireccionTrabajo, registerData.IdComunaHogar,
-                registerData.IdComunaTrabajo, inactiveSuscription, registerData.IdDabbawalla, registerData.Username,
+                registerData.IdComunaTrabajo, inactiveSuscription, registerData.Username,
                 registerData.Password, registerData.Nombre, registerData.Apellido, registerData.Email, registerData.Celular);
 
             if (client.DabbawallaAsociado.IdDabbawalla != invalidDabbawalla && client.Create() == true)

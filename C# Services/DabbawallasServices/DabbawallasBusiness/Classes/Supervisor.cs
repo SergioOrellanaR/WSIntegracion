@@ -13,6 +13,11 @@ namespace DabbawallasBusiness.Classes
         public int IdSupervisor { get; set; }
         public int IdZona { get; set; }
 
+        public Supervisor()
+        {
+
+        }
+
         public Supervisor(int idSupervisor)
         {
             IdSupervisor = idSupervisor;
@@ -88,5 +93,19 @@ namespace DabbawallasBusiness.Classes
                 return false;
             }
         }
+
+        public List<Dabbawalla> AssociatedDabbawallas ()
+        {
+            List<Dabbawalla> dabbawallasList = new List<Dabbawalla>();
+            List<DABBAWALLA> dabList = Connection.DabbawallaDB.DABBAWALLA.Where(x => x.ID_SUPERVISOR_ASOCIADO == IdSupervisor).ToList<DABBAWALLA>();
+            foreach (DABBAWALLA dab in dabList)
+            {
+                Dabbawalla dabbawalla = new Dabbawalla(dab.ID_DABBAWALLA);
+                dabbawallasList.Add(dabbawalla);
+            }
+            return dabbawallasList;
+        }
+
+        
     }
 }

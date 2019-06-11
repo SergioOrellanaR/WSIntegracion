@@ -27,17 +27,11 @@ namespace DabbawallasBusiness.Classes
             }
         }
 
-        public Dabbawalla(int idSupervisor, string username, string password, string nombre, string apellido, string email, string celular)
+        public Dabbawalla(string username, string password, string nombre, string apellido, string email, string celular)
             : base(DabbawallaTypeId, username, password, nombre, apellido, email, celular)
         {
-            SupervisorAsociado = new Supervisor(idSupervisor);
+            SupervisorAsociado = getLessAssociatedDabbawallasSupervisor();
         }
-
-        //public Supervisor getLessStressedsupervisor ()
-        //{
-        //    int idLessStressedSupervisor = Connection.DabbawallaDB.SUPERVISOR.Count(x => )
-        //    return new Supervisor
-        //}
 
         public bool Read()
         {
@@ -80,6 +74,37 @@ namespace DabbawallasBusiness.Classes
             {
                 return false;
             }
+        }
+
+        public Supervisor getLessAssociatedDabbawallasSupervisor ()
+        {
+            Supervisor supervisor;
+            try
+            {
+                int idSupervisor = Connection.DabbawallaDB.VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR.OrderBy(x => x.Dabbawallas_Asociados).First().ID_SUPERVISOR;
+                supervisor = new Supervisor(idSupervisor);
+            }
+            catch
+            {
+                int idInvalidSupervisor = -1;
+                supervisor = new Supervisor()
+                {
+                    IdSupervisor = idInvalidSupervisor
+                };
+            }
+            return supervisor;
+        }
+
+        public List<Cliente> AssociatedClients()
+        {
+            List<Cliente> clientsList = new List<Cliente>();
+            List<CLIENTE> databaseClientList = Connection.DabbawallaDB.CLIENTE.Where(x => x.ID_DABBAWALLA_ASOCIADO == IdDabbawalla).ToList<CLIENTE>();
+            foreach (CLIENTE cli in databaseClientList)
+            {
+                Cliente client = new Cliente(cli.ID_CLIENTE);
+                clientsList.Add(client);
+            }
+            return clientsList;
         }
     }
 }

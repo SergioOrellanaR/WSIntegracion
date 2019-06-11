@@ -13,7 +13,6 @@ namespace DabbawallasREST.Models
         public string Apellido { get; set; }
         public string Email { get; set; }
         public string Celular { get; set; }
-        public int IdSupervisorAsociado { get; set; }
 
         public bool PropertiesAreNullOrEmpty()
         {
