@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Classes\Alerta.cs" />
     <Compile Include="Classes\Cliente.cs" />
+    <Compile Include="Classes\Comuna.cs" />
     <Compile Include="Classes\Dabbawalla.cs" />
     <Compile Include="Classes\Supervisor.cs" />
     <Compile Include="Classes\Ticket.cs" />

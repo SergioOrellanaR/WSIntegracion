@@ -94,12 +94,12 @@ namespace DabbawallaView {
         protected global::System.Web.UI.WebControls.TextBox txCelular;
         
         /// <summary>
-        /// Control txZona.
+        /// Control ddlZonas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txZona;
+        protected global::System.Web.UI.WebControls.DropDownList ddlZonas;
     }
 }

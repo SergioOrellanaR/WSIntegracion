@@ -66,17 +66,6 @@ namespace DabbawallaView.Classes
            
         }
 
-        public Object JsonToObject(string jsonString)
-        {
-            using (var ms = new MemoryStream(Encoding.Unicode.GetBytes(jsonString)))
-            {
-                // Deserialization from JSON  
-                DataContractJsonSerializer deserializer = new DataContractJsonSerializer(typeof(Object));
-                Object obj = (Object)deserializer.ReadObject(ms);
-                return obj;
-            }
-        }
-
         public string ObjectToJson<T> (T obj)
         {
             DataContractJsonSerializer js = new DataContractJsonSerializer(typeof(T));

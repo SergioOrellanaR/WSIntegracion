@@ -138,11 +138,11 @@
                             </div>
                           </div>
                          
-                          <asp:Button type="submit" runat="server" Text="Registrarse" class="btn btn-large"/>     
+                          <asp:Button type="submit" runat="server" Text="Registrarse" class="btn btn-large" OnClick="Register"/>     
                       </div>
                 </div>
         <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>f
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
     <script>

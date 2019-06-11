@@ -112,15 +112,8 @@
                             <div class="input-field col s12">
                               <asp:TextBox ID="txCelular"  type="text" placeholder="Celular" runat="server"></asp:TextBox> <br />
                             </div>
-                          </div>
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <asp:DropDownList class="form-control dropdown-trigger btn" ID="ddlSupervisor" runat="server">
-                                     <asp:ListItem >Supervisor</asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
-                          </div>                         
-                          <asp:Button type="submit" runat="server" Text="Registrarse" class="btn btn-large"/>     
+                          </div>          
+                          <asp:Button type="submit" runat="server" Text="Registrarse" class="btn btn-large" OnClick="Register"/>     
                       </div>
                 </div>
 
