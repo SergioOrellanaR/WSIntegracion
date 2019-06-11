@@ -60,9 +60,9 @@ namespace DabbawallaView
 
         protected void Login(object sender, EventArgs e)
         {
-            Page.Validate("Login");
-            if (Page.IsValid)
-            {
+
+            //if (Page.IsValid)
+            //{
                 string loginURL = "http://localhost:6970/dabbawallas/login/authenticate";
 
                 LoginRequest loginRequest = new LoginRequest()
@@ -83,11 +83,32 @@ namespace DabbawallaView
                 {
                     Response.Redirect("Index.aspx");
                 }
-            }
-            else
+            //}
+            //else
+            //{
+
+            //}
+        }
+
+        protected bool IsGroupValid(string sValidationGroup)
+        {
+            foreach (BaseValidator validator in Page.Validators)
             {
+                if (validator.ValidationGroup == sValidationGroup)
+                {
+                    bool fValid = validator.IsValid;
+                    if (fValid)
+                    {
+                        validator.Validate();
+                        fValid = validator.IsValid;
+                        validator.IsValid = true;
+                    }
+                    if (!fValid)
+                        return false;
+                }
 
             }
+            return true;
         }
     }
 }
