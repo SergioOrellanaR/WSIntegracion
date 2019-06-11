@@ -2,26 +2,127 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dabbawallas - Chile</title>
 
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <asp:ContentPlaceHolder ID="ContentPlaceHolderHead" runat="server">
     </asp:ContentPlaceHolder>
+
 </head>
-
-<body>
+<body>  
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
+        <nav class="white" role="navigation"  id="navbarCliente">
+                <div class="nav-wrapper container">
+                    <div class="nav-wrapper">
+                      <a id="logo-container" href="Index.aspx" class="brand-logo">Dabbaweas</a>
+                      <ul id="nav-mobile" class="right hide-on-med-and-down" >
+                        <li><a href="#">Tickets</a></li>
+                        <li><a href="#">Suscripción</a></li>
+                        <li><a href="#">Consultar Dirección</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <asp:Button type="submit" runat="server" Text="Cerrar Sesion" class="waves-effect waves-light btn" />                        
+                      </ul>
+                    </div>
+                </div>
+            </nav>
 
-    <!--  Scripts-->
-  <asp:ContentPlaceHolder ID="ContentPlaceHolderScripts" runat="server">
-  </asp:ContentPlaceHolder>
+        <nav class="white" role="navigation"  id="navbarDabbawalla">
+                <div class="nav-wrapper container">
+                    <div class="nav-wrapper">
+                      <a id="logo-container" href="Index.aspx" class="brand-logo">Dabbaweas</a>
+                      <ul id="nav-mobile" class="right hide-on-med-and-down" >
+                        <li><a href="#">Consultar Dirección</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <asp:Button type="submit" runat="server" Text="Cerrar Sesion" class="waves-effect waves-light btn" />                        
+                      </ul>
+                    </div>
+                </div>
+            </nav>
 
+         <nav class="white" role="navigation"  id="navbarSupervisor">
+                <div class="nav-wrapper container">
+                    <div class="nav-wrapper">
+                      <a id="logo-container" href="Index.aspx" class="brand-logo">Dabbaweas</a>
+                      <ul id="nav-mobile" class="right hide-on-med-and-down" >
+                        <li><a href="#">Ver Alertas Activas</a></li>
+                        <li><a href="#">Consultar Dirección</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <asp:Button type="submit" runat="server" Text="Cerrar Sesion" class="waves-effect waves-light btn" />                        
+
+                      </ul>
+                    </div>
+                </div>
+            </nav>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <footer class="page-footer teal">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Company Bio</h5>
+                        <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget</p>
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">Settings</h5>
+                        <ul>
+                            <li><a class="white-text" href="#!">Link 1</a></li>
+                            <li><a class="white-text" href="#!">Link 2</a></li>
+                            <li><a class="white-text" href="#!">Link 3</a></li>
+                            <li><a class="white-text" href="#!">Link 4</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">Connect</h5>
+                        <ul>
+                            <li><a class="white-text" href="#!">Link 1</a></li>
+                            <li><a class="white-text" href="#!">Link 2</a></li>
+                            <li><a class="white-text" href="#!">Link 3</a></li>
+                            <li><a class="white-text" href="#!">Link 4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Desarrollado por <a class="brown-text text-lighten-3" href="http://novasmart.com">NovaSmart</a>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <!--  Scripts-->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderScripts" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.modal').modal();
+            });
+
+            $(document).ready(function () {
+                $('.tabs').tabs();
+            });
+            $('.dropdown-trigger').dropdown();
+        </script>
+        </form>
 </body>
+
 </html>
+
