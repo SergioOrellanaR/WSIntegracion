@@ -13,33 +13,6 @@ namespace DabbawallaView {
     public partial class RegistroSupervisor {
         
         /// <summary>
-        /// Control form1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// Control txUser.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txUser;
-        
-        /// <summary>
-        /// Control txPass.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txPass;
-        
-        /// <summary>
         /// Control txUsername.
         /// </summary>
         /// <remarks>
@@ -47,6 +20,15 @@ namespace DabbawallaView {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txUsername;
+        
+        /// <summary>
+        /// Control RequiredFieldUsername.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldUsername;
         
         /// <summary>
         /// Control txPassword.
@@ -58,6 +40,15 @@ namespace DabbawallaView {
         protected global::System.Web.UI.WebControls.TextBox txPassword;
         
         /// <summary>
+        /// Control RequiredFieldPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldPassword;
+        
+        /// <summary>
         /// Control txNombre.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,15 @@ namespace DabbawallaView {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txNombre;
+        
+        /// <summary>
+        /// Control RequiredFieldNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldNombre;
         
         /// <summary>
         /// Control txApellido.
@@ -76,6 +76,15 @@ namespace DabbawallaView {
         protected global::System.Web.UI.WebControls.TextBox txApellido;
         
         /// <summary>
+        /// Control RequiredFieldApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldApellido;
+        
+        /// <summary>
         /// Control txEmail.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace DabbawallaView {
         protected global::System.Web.UI.WebControls.TextBox txEmail;
         
         /// <summary>
+        /// Control RequiredFieldEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldEmail;
+        
+        /// <summary>
         /// Control txCelular.
         /// </summary>
         /// <remarks>
@@ -92,6 +110,15 @@ namespace DabbawallaView {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txCelular;
+        
+        /// <summary>
+        /// Control RequiredFieldCelular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldCelular;
         
         /// <summary>
         /// Control ddlZonas.

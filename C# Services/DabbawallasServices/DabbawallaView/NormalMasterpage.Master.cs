@@ -60,25 +60,33 @@ namespace DabbawallaView
 
         protected void Login(object sender, EventArgs e)
         {
-            string loginURL = "http://localhost:6970/dabbawallas/login/authenticate";
-
-            LoginRequest loginRequest = new LoginRequest()
+            Page.Validate("Login");
+            if (Page.IsValid)
             {
-                Username = txUser.Text,
-                Password = txPass.Text
-            };
+                string loginURL = "http://localhost:6970/dabbawallas/login/authenticate";
 
-            string jsonRequest = JsonConvert.SerializeObject(loginRequest);
-            string jsonResponse = caller.MethodCallerPOST(loginURL, jsonRequest);
+                LoginRequest loginRequest = new LoginRequest()
+                {
+                    Username = txUser.Text,
+                    Password = txPass.Text
+                };
 
-            if (jsonResponse != null)
-            {
-                LoginResponse loginResponse = JsonConvert.DeserializeObject<LoginResponse>(jsonResponse);
-                Session["ses"] = loginResponse;
+                string jsonRequest = JsonConvert.SerializeObject(loginRequest);
+                string jsonResponse = caller.MethodCallerPOST(loginURL, jsonRequest);
+
+                if (jsonResponse != null)
+                {
+                    LoginResponse loginResponse = JsonConvert.DeserializeObject<LoginResponse>(jsonResponse);
+                    Session["ses"] = loginResponse;
+                }
+                else
+                {
+                    Response.Redirect("Index.aspx");
+                }
             }
             else
             {
-                Response.Redirect("Index.aspx");
+
             }
         }
     }
