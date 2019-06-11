@@ -41,5 +41,7 @@ namespace DabbawallasData
         public virtual DbSet<USUARIO> USUARIO { get; set; }
         public virtual DbSet<ZONA> ZONA { get; set; }
         public virtual DbSet<VISTA_INFORMACION_CLIENTES_SUSCRITOS> VISTA_INFORMACION_CLIENTES_SUSCRITOS { get; set; }
+        public virtual DbSet<VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA> VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA { get; set; }
+        public virtual DbSet<VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR> VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR { get; set; }
     }
 }

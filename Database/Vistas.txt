@@ -1,4 +1,6 @@
-CREATE VIEW VISTA_INFORMACION_CLIENTES_SUSCRITOS as 
+Drop view IF EXISTS dbo.VISTA_INFORMACION_CLIENTES_SUSCRITOS;
+GO
+CREATE VIEW dbo.VISTA_INFORMACION_CLIENTES_SUSCRITOS as 
 select 
 cl.id_cliente as ID_CLIENTE,
 usr.USERNAME as USERNAME_CLIENTE,
@@ -17,3 +19,21 @@ join dbo.dabbawalla as dab on (cl.id_dabbawalla_asociado = dab.ID_DABBAWALLA)
 join dbo.supervisor as sup on (dab.id_supervisor_asociado = sup.id_supervisor)
 join dbo.zona as z on (sup.id_zona = z.id_zona)
 where cl.id_estado_suscripcion = 1 
+GO
+DROP VIEW IF EXISTS VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR;
+GO
+CREATE VIEW VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR as 
+SELECT ID_SUPERVISOR ,count (dab.id_supervisor_asociado) as Dabbawallas_Asociados
+FROM dbo.SUPERVISOR
+  LEFT OUTER JOIN dbo.DABBAWALLA as dab
+  ON ID_SUPERVISOR_ASOCIADO = ID_SUPERVISOR
+  group by id_supervisor;
+GO
+DROP VIEW IF EXISTS VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA;
+GO
+CREATE VIEW VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA as 
+SELECT ID_DABBAWALLA ,count (cl.ID_DABBAWALLA_ASOCIADO) as Clientes_Asociados
+FROM dbo.DABBAWALLA
+  LEFT OUTER JOIN dbo.CLIENTE as cl
+  ON ID_DABBAWALLA_ASOCIADO = ID_DABBAWALLA
+  group by ID_DABBAWALLA;

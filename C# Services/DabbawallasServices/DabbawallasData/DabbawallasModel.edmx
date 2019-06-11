@@ -137,6 +137,24 @@
           <Property Name="ZONA" Type="nvarchar" MaxLength="5" />
         </EntityType>
         <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DABBAWALLA.dbo.VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA">
+          <Key>
+            <PropertyRef Name="ID_DABBAWALLA" />
+          </Key>
+          <Property Name="ID_DABBAWALLA" Type="int" Nullable="false" />
+          <Property Name="Clientes_Asociados" Type="int" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DABBAWALLA.dbo.VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR">
+          <Key>
+            <PropertyRef Name="ID_SUPERVISOR" />
+          </Key>
+          <Property Name="ID_SUPERVISOR" Type="int" Nullable="false" />
+          <Property Name="Dabbawallas_Asociados" Type="int" />
+        </EntityType>
+        <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'DABBAWALLA.dbo.VISTA_INFORMACION_CLIENTES_SUSCRITOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="VISTA_INFORMACION_CLIENTES_SUSCRITOS">
           <Key>
@@ -374,6 +392,18 @@ advertencia 6002: La tabla o vista 'DABBAWALLA.dbo.VISTA_INFORMACION_CLIENTES_SU
           <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ZONA" EntityType="Self.ZONA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA" EntityType="Self.VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA].[ID_DABBAWALLA] AS [ID_DABBAWALLA], 
+    [VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA].[Clientes_Asociados] AS [Clientes_Asociados]
+    FROM [dbo].[VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA] AS [VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR" EntityType="Self.VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR].[ID_SUPERVISOR] AS [ID_SUPERVISOR], 
+    [VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR].[Dabbawallas_Asociados] AS [Dabbawallas_Asociados]
+    FROM [dbo].[VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR] AS [VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="VISTA_INFORMACION_CLIENTES_SUSCRITOS" EntityType="Self.VISTA_INFORMACION_CLIENTES_SUSCRITOS" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [VISTA_INFORMACION_CLIENTES_SUSCRITOS].[ID_CLIENTE] AS [ID_CLIENTE], 
@@ -545,7 +575,9 @@ advertencia 6002: La tabla o vista 'DABBAWALLA.dbo.VISTA_INFORMACION_CLIENTES_SU
             <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
             <End Role="USUARIO" EntitySet="USUARIO" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA" EntityType="DABBAWALLASModel.VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA" />
+          <EntitySet Name="VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR" EntityType="DABBAWALLASModel.VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR" />
+          </EntityContainer>
         <EntityType Name="ALERTA">
           <Key>
             <PropertyRef Name="ID_ALERTA" />
@@ -931,7 +963,21 @@ advertencia 6002: La tabla o vista 'DABBAWALLA.dbo.VISTA_INFORMACION_CLIENTES_SU
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <EntityType Name="VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA">
+          <Key>
+            <PropertyRef Name="ID_DABBAWALLA" />
+          </Key>
+          <Property Name="ID_DABBAWALLA" Type="Int32" Nullable="false" />
+          <Property Name="Clientes_Asociados" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR">
+          <Key>
+            <PropertyRef Name="ID_SUPERVISOR" />
+          </Key>
+          <Property Name="ID_SUPERVISOR" Type="Int32" Nullable="false" />
+          <Property Name="Dabbawallas_Asociados" Type="Int32" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1098,7 +1144,23 @@ advertencia 6002: La tabla o vista 'DABBAWALLA.dbo.VISTA_INFORMACION_CLIENTES_SU
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA">
+            <EntityTypeMapping TypeName="DABBAWALLASModel.VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA">
+              <MappingFragment StoreEntitySet="VISTA_CANTIDAD_CLIENTES_POR_DABBAWALLA">
+                <ScalarProperty Name="Clientes_Asociados" ColumnName="Clientes_Asociados" />
+                <ScalarProperty Name="ID_DABBAWALLA" ColumnName="ID_DABBAWALLA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR">
+            <EntityTypeMapping TypeName="DABBAWALLASModel.VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR">
+              <MappingFragment StoreEntitySet="VISTA_CANTIDAD_DABBAWALLAS_POR_SUPERVISOR">
+                <ScalarProperty Name="Dabbawallas_Asociados" ColumnName="Dabbawallas_Asociados" />
+                <ScalarProperty Name="ID_SUPERVISOR" ColumnName="ID_SUPERVISOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
