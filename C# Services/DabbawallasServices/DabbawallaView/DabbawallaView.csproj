@@ -75,6 +75,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CerrarSesion.aspx" />
     <Content Include="Fondo1.jpg" />
     <Content Include="background2.jpg" />
     <Content Include="background3.jpg" />
@@ -85,6 +86,7 @@
     <Content Include="FondoCliente.jpg" />
     <Content Include="FondoSupervisor.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="IndexLog.aspx" />
     <Content Include="js\init.js" />
     <Content Include="js\materialize.js" />
     <Content Include="js\materialize.min.js" />
@@ -95,7 +97,21 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CerrarSesion.aspx.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CerrarSesion.aspx.designer.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Classes\RESTWebCaller.cs" />
+    <Compile Include="IndexLog.aspx.cs">
+      <DependentUpon>IndexLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexLog.aspx.designer.cs">
+      <DependentUpon>IndexLog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Logeado.Master.cs">
       <DependentUpon>Logeado.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

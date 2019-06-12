@@ -78,6 +78,7 @@ namespace DabbawallaView
                 {
                     LoginResponse loginResponse = JsonConvert.DeserializeObject<LoginResponse>(jsonResponse);
                     Session["ses"] = loginResponse;
+                    Response.Redirect("IndexLog.aspx");
                 }
                 else
                 {

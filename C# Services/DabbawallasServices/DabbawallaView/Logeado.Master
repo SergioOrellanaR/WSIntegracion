@@ -18,8 +18,8 @@
     </asp:ContentPlaceHolder>
 
 </head>
-<body>  
-    <form id="form1" runat="server">
+<body>
+    <%--<form id="form1" runat="server">
         <nav class="white" role="navigation"  id="navbarCliente">
                 <div class="nav-wrapper container">
                     <div class="nav-wrapper">
@@ -50,6 +50,8 @@
                 </div>
             </nav>
 
+        
+
          <nav class="white" role="navigation"  id="navbarSupervisor">
                 <div class="nav-wrapper container">
                     <div class="nav-wrapper">
@@ -64,7 +66,42 @@
                       </ul>
                     </div>
                 </div>
-            </nav>
+            </nav>--%>
+
+    <form id="form1" runat="server">
+        <asp:Menu ID="MenuCliente" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container">
+            <Items>
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Tickets" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Suscribirse" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Consultar Dirección" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Sobre Nosotros" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
+                <asp:MenuItem NavigateUrl="CerrarSesion.aspx" Text="Cerrar sesión" />
+            </Items>
+        </asp:Menu>
+
+        <asp:Menu ID="MenuDabbawalla" runat="server" Orientation="Horizontal">
+            <Items>
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Consultar Dirección" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Sobre Nosotros" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
+                <asp:MenuItem NavigateUrl="CerrarSesion.aspx" Text="Cerrar sesión" />
+            </Items>
+        </asp:Menu>
+
+        <asp:Menu ID="MenuSupervisor" runat="server" Orientation="Horizontal">
+            <Items>
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Consultar Dirección" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Sobre Nosotros" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
+                <asp:MenuItem NavigateUrl="www.google.cl" Text="Ver Alertas activas" />
+                <asp:MenuItem NavigateUrl="CerrarSesion.aspx" Text="Cerrar sesión" />
+            </Items>
+        </asp:Menu>
+
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
 
@@ -121,7 +158,7 @@
             });
             $('.dropdown-trigger').dropdown();
         </script>
-        </form>
+    </form>
 </body>
 
 </html>
