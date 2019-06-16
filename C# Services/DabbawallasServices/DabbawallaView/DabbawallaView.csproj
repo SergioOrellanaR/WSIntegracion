@@ -91,6 +91,7 @@
     <Content Include="FondoSupervisor.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="IndexLog.aspx" />
+    <Content Include="Informacion.aspx" />
     <Content Include="js\init.js" />
     <Content Include="js\materialize.js" />
     <Content Include="js\materialize.min.js" />
@@ -101,7 +102,6 @@
     <Content Include="testpage.aspx" />
     <Content Include="Tickets.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CerrarSesion.aspx.cs">
@@ -139,6 +139,13 @@
     </Compile>
     <Compile Include="IndexLog.aspx.designer.cs">
       <DependentUpon>IndexLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informacion.aspx.cs">
+      <DependentUpon>Informacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Informacion.aspx.designer.cs">
+      <DependentUpon>Informacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logeado.Master.cs">
       <DependentUpon>Logeado.Master</DependentUpon>
@@ -203,13 +210,6 @@
     </Compile>
     <Compile Include="Tickets.aspx.designer.cs">
       <DependentUpon>Tickets.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

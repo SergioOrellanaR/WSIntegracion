@@ -60,7 +60,7 @@
         </nav>
         <asp:Menu ID="MenuCliente" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container">
             <Items>
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
+                <asp:MenuItem NavigateUrl="Informacion.aspx" Text="Información" />
                 <asp:MenuItem NavigateUrl="Tickets.aspx" Text="Tickets" />
                 <asp:MenuItem NavigateUrl="Suscripcion.aspx" Text="Suscribirse" />
                 <asp:MenuItem NavigateUrl="ConsultarDireccionCliente.aspx" Text="Consultar Dirección" />
@@ -72,7 +72,7 @@
 
         <asp:Menu ID="MenuDabbawalla" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container">
             <Items>
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
+                <asp:MenuItem NavigateUrl="Informacion.aspx" Text="Información" />
                 <asp:MenuItem NavigateUrl="ConsultarDireccionDabbawalla.aspx" Text="Consultar Dirección" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Sobre Nosotros" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
@@ -82,7 +82,7 @@
 
         <asp:Menu ID="MenuSupervisor" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container">
             <Items>
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
+                <asp:MenuItem NavigateUrl="Informacion.aspx" Text="Información" />
                 <asp:MenuItem NavigateUrl="ConsultarDireccionSupervisor.aspx" Text="Consultar Dirección" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Sobre Nosotros" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
