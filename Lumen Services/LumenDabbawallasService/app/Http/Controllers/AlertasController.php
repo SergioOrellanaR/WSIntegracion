@@ -12,11 +12,8 @@ class AlertasController extends Controller
     {
 
      $alertasActivas =DB::table('ALERTA')->where('ID_TIPO_ALERTA', '=', 1)->get();
-     if($alertasActivas==null){
-         return response()->json($alertasActivas,200);
-     }else{
-         return response()->json(['error' => 'No se encuentran alertas activas'], 404);
-     }
+     return response()->json($alertasActivas,200);
+
 
     }
 }
