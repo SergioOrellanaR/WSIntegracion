@@ -10,7 +10,7 @@ class Alertas extends Model
     protected $primaryKey = 'ID_ALERTA';
     protected $dateFormat = 'U';
     public $timestamps = false;
-    
+
     protected $fillable = [
         'ID_ALERTA', 'ID_CLIENTE_ASOCIADO', 'ID_TIPO_ALERTA', 'FECHA_ALERTA'
     ];
