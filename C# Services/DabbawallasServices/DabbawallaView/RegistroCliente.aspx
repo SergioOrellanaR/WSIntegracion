@@ -60,13 +60,13 @@
 
             <div class="row">
                 <div class="input-field col s6">
+                    <asp:Label runat="server">Comuna Hogar</asp:Label>
                     <asp:DropDownList class="form-control dropdown-trigger btn" ID="ddlComunaHogar" runat="server">
-                        <asp:ListItem>Comuna Hogar</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="input-field col s6">
+                    <asp:Label runat="server">Comuna Trabajo</asp:Label>
                     <asp:DropDownList class="form-control dropdown-trigger btn" ID="ddlComunaTrabajo" runat="server">
-                        <asp:ListItem>Comuna Trabajo</asp:ListItem>
                     </asp:DropDownList>
                 </div>
             </div>

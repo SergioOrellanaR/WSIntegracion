@@ -20,7 +20,8 @@
         <div class="row">
             <div class="input-field col s6">
                 <h5>Seleccione Cliente</h5>
-                <asp:DropDownList class="form-control dropdown-trigger btn-small" ID="ddlCliente" runat="server">
+                <asp:DropDownList class="form-control dropdown-trigger btn-small" ID="ddlCliente" runat="server" >
+                    <asp:ListItem Selected="False">Selecciona un Usuario</asp:ListItem>
                 </asp:DropDownList>
                 <asp:Button type="submit" runat="server" Text="Buscar" class="btn" />
             </div>
