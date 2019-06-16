@@ -32,7 +32,7 @@
                 </div>
             </div>
         </nav>
-
+        
         <!-- Dropdown Structure -->
         <ul id='dropdown1' class='dropdown-content'>
             <li><a href="RegistroCliente.aspx">Cliente</a></li>

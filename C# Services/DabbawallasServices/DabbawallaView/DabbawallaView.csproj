@@ -75,6 +75,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlertasActivas.aspx" />
     <Content Include="CerrarSesion.aspx" />
     <Content Include="ConsultarDireccionCliente.aspx" />
     <Content Include="ConsultarDireccionDabbawalla.aspx" />
@@ -108,6 +109,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlertasActivas.aspx.cs">
+      <DependentUpon>AlertasActivas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlertasActivas.aspx.designer.cs">
+      <DependentUpon>AlertasActivas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CerrarSesion.aspx.cs">
       <DependentUpon>CerrarSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

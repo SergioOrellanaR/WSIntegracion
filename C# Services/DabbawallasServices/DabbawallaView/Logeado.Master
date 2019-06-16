@@ -77,13 +77,13 @@
                 <asp:MenuItem NavigateUrl="CerrarSesion.aspx" Text="Cerrar sesión" />
             </Items>
         </asp:Menu>
-
+        
         <asp:Menu ID="MenuSupervisor" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container">
             <Items>
                 <asp:MenuItem NavigateUrl="Informacion.aspx" Text="Información" />
                 <asp:MenuItem NavigateUrl="ConsultarDireccionSupervisor.aspx" Text="Consultar Dirección" />
                 <asp:MenuItem NavigateUrl="NosotrosL.aspx" Text="Sobre Nosotros" />
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Ver Alertas activas" />
+                <asp:MenuItem NavigateUrl="AlertasActivas.aspx" Text="Ver Alertas activas" />
                 <asp:MenuItem NavigateUrl="CerrarSesion.aspx" Text="Cerrar sesión" />
             </Items>
         </asp:Menu>
