@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NormalMasterpage.Master" AutoEventWireup="true" CodeBehind="testpage.aspx.cs" Inherits="DabbawallaView.testpage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Logeado.Master" AutoEventWireup="true" CodeBehind="testpage.aspx.cs" Inherits="DabbawallaView.testpage" %>
 
 <asp:Content ID="ContentHead" ContentPlaceHolderID="ContentPlaceHolderHead" runat="server">
     <!-- Aqui debiesen ir elementos del header propios que no se encuentran en la masterpage -->

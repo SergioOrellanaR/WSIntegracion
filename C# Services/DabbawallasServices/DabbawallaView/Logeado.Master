@@ -56,7 +56,7 @@
 
     <form id="form1" runat="server" >
         <nav class="white">
-        <a href="Index.aspx" class="brand-logo center">Dabbaweas</a>
+        <a href="IndexLog.aspx" class="brand-logo center">Dabbaweas</a>
             </nav>
         <asp:Menu ID="MenuCliente" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container" >
             <Items>
