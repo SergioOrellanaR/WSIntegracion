@@ -26,7 +26,6 @@
                   <a id="logo-container" href="Index.aspx" class="brand-logo">Dabbaweas</a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="Nosotros.aspx">Sobre Nosotros</a></li>
-                    <li><a href="badges.html">Contacto</a></li>
                     <a href="#login" class="waves-effect waves-light btn modal-trigger">Login</a>
                     <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Registro</a>
                   </ul>

@@ -65,7 +65,6 @@
                 <asp:MenuItem NavigateUrl="Suscripcion.aspx" Text="Suscribirse" />
                 <asp:MenuItem NavigateUrl="ConsultarDireccionCliente.aspx" Text="Consultar Dirección" />
                 <asp:MenuItem NavigateUrl="NosotrosL.aspx" Text="Sobre Nosotros" />
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
                 <asp:MenuItem NavigateUrl="CerrarSesion.aspx" Text="Cerrar sesión" />
             </Items>
         </asp:Menu>
@@ -75,7 +74,6 @@
                 <asp:MenuItem NavigateUrl="Informacion.aspx" Text="Información" />
                 <asp:MenuItem NavigateUrl="ConsultarDireccionDabbawalla.aspx" Text="Consultar Dirección" />
                 <asp:MenuItem NavigateUrl="NosotrosL.aspx" Text="Sobre Nosotros" />
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
                 <asp:MenuItem NavigateUrl="CerrarSesion.aspx" Text="Cerrar sesión" />
             </Items>
         </asp:Menu>
@@ -85,7 +83,6 @@
                 <asp:MenuItem NavigateUrl="Informacion.aspx" Text="Información" />
                 <asp:MenuItem NavigateUrl="ConsultarDireccionSupervisor.aspx" Text="Consultar Dirección" />
                 <asp:MenuItem NavigateUrl="NosotrosL.aspx" Text="Sobre Nosotros" />
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Ver Alertas activas" />
                 <asp:MenuItem NavigateUrl="CerrarSesion.aspx" Text="Cerrar sesión" />
             </Items>
