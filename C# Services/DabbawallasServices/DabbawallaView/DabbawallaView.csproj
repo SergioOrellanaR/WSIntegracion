@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CerrarSesion.aspx" />
+    <Content Include="dabbawalla_tarjeta.jpg" />
     <Content Include="Fondo1.jpg" />
     <Content Include="background2.jpg" />
     <Content Include="background3.jpg" />
@@ -93,7 +94,9 @@
     <Content Include="RegistroCliente.aspx" />
     <Content Include="RegistroDabbawalla.aspx" />
     <Content Include="RegistroSupervisor.aspx" />
+    <Content Include="Suscripcion.aspx" />
     <Content Include="testpage.aspx" />
+    <Content Include="Tickets.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -155,12 +158,26 @@
     <Compile Include="RegistroSupervisor.aspx.designer.cs">
       <DependentUpon>RegistroSupervisor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Suscripcion.aspx.cs">
+      <DependentUpon>Suscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suscripcion.aspx.designer.cs">
+      <DependentUpon>Suscripcion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="testpage.aspx.cs">
       <DependentUpon>testpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="testpage.aspx.designer.cs">
       <DependentUpon>testpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tickets.aspx.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tickets.aspx.designer.cs">
+      <DependentUpon>Tickets.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -48,32 +48,21 @@
                       </ul>
                     </div>
                 </div>
-            </nav>
+            </nav>--%>
 
         
 
-         <nav class="white" role="navigation"  id="navbarSupervisor">
-                <div class="nav-wrapper container">
-                    <div class="nav-wrapper">
-                      <a id="logo-container" href="Index.aspx" class="brand-logo">Dabbaweas</a>
-                      <ul id="nav-mobile" class="right hide-on-med-and-down" >
-                        <li><a href="#">Ver Alertas Activas</a></li>
-                        <li><a href="#">Consultar Dirección</a></li>
-                        <li><a href="#">Sobre Nosotros</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <asp:Button type="submit" runat="server" Text="Cerrar Sesion" class="waves-effect waves-light btn" />                        
+         
 
-                      </ul>
-                    </div>
-                </div>
-            </nav>--%>
-
-    <form id="form1" runat="server">
-        <asp:Menu ID="MenuCliente" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container">
+    <form id="form1" runat="server" >
+        <nav class="white">
+        <a href="Index.aspx" class="brand-logo center">Dabbaweas</a>
+            </nav>
+        <asp:Menu ID="MenuCliente" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container" >
             <Items>
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Tickets" />
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Suscribirse" />
+                <asp:MenuItem NavigateUrl="Tickets.aspx" Text="Tickets" />
+                <asp:MenuItem NavigateUrl="Suscripcion.aspx" Text="Suscribirse" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Consultar Dirección" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Sobre Nosotros" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
@@ -81,7 +70,7 @@
             </Items>
         </asp:Menu>
 
-        <asp:Menu ID="MenuDabbawalla" runat="server" Orientation="Horizontal">
+        <asp:Menu ID="MenuDabbawalla" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container">
             <Items>
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Consultar Dirección" />
@@ -91,7 +80,7 @@
             </Items>
         </asp:Menu>
 
-        <asp:Menu ID="MenuSupervisor" runat="server" Orientation="Horizontal">
+        <asp:Menu ID="MenuSupervisor" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container">
             <Items>
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Consultar Dirección" />
