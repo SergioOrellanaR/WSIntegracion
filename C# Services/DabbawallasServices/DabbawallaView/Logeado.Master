@@ -50,20 +50,20 @@
                 </div>
             </nav>--%>
 
-        
 
-         
 
-    <form id="form1" runat="server" >
+
+
+    <form id="form1" runat="server">
         <nav class="white">
-        <a href="IndexLog.aspx" class="brand-logo center">Dabbaweas</a>
-            </nav>
-        <asp:Menu ID="MenuCliente" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container" >
+            <a href="IndexLog.aspx" class="brand-logo center">Dabbaweas</a>
+        </nav>
+        <asp:Menu ID="MenuCliente" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container">
             <Items>
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
                 <asp:MenuItem NavigateUrl="Tickets.aspx" Text="Tickets" />
                 <asp:MenuItem NavigateUrl="Suscripcion.aspx" Text="Suscribirse" />
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Consultar Dirección" />
+                <asp:MenuItem NavigateUrl="ConsultarDireccionCliente.aspx" Text="Consultar Dirección" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Sobre Nosotros" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
                 <asp:MenuItem NavigateUrl="CerrarSesion.aspx" Text="Cerrar sesión" />
@@ -73,7 +73,7 @@
         <asp:Menu ID="MenuDabbawalla" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container">
             <Items>
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Consultar Dirección" />
+                <asp:MenuItem NavigateUrl="ConsultarDireccionDabbawalla.aspx" Text="Consultar Dirección" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Sobre Nosotros" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
                 <asp:MenuItem NavigateUrl="CerrarSesion.aspx" Text="Cerrar sesión" />
@@ -83,7 +83,7 @@
         <asp:Menu ID="MenuSupervisor" runat="server" Orientation="Horizontal" CssClass="nav-wrapper container">
             <Items>
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Información" />
-                <asp:MenuItem NavigateUrl="www.google.cl" Text="Consultar Dirección" />
+                <asp:MenuItem NavigateUrl="ConsultarDireccionSupervisor.aspx" Text="Consultar Dirección" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Sobre Nosotros" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Contacto" />
                 <asp:MenuItem NavigateUrl="www.google.cl" Text="Ver Alertas activas" />
@@ -147,6 +147,7 @@
             });
             $('.dropdown-trigger').dropdown();
         </script>
+
     </form>
 </body>
 
