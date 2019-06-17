@@ -7,8 +7,8 @@
     <div class="parallax-container valign-wrapper">
         <div class="section no-pad-bot">
             <div class="container">
-                <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                <div class="row center ">
+                    <h2><asp:Label runat="server" Text="Usted ya esta suscrito al servicio de Dabbawallas Chile" CssClass="header col s12 light "></asp:Label></h2>
                 </div>
             </div>
         </div>

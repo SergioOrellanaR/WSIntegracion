@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Logeado.Master" AutoEventWireup="true" CodeBehind="ConsultarDireccionSupervisor.aspx.cs" Inherits="DabbawallaView.ConsultarDireccionSupervisor" %>
+﻿ss<%@ Page Title="" Language="C#" MasterPageFile="~/Logeado.Master" AutoEventWireup="true" CodeBehind="ConsultarDireccionSupervisor.aspx.cs" Inherits="DabbawallaView.ConsultarDireccionSupervisor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderHead" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

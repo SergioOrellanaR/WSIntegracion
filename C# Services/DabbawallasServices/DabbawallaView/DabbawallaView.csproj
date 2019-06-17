@@ -103,7 +103,9 @@
     <Content Include="RegistroDabbawalla.aspx" />
     <Content Include="RegistroSupervisor.aspx" />
     <Content Include="santiago.jpg" />
+    <Content Include="santiago_fondo.jpg" />
     <Content Include="Suscripcion.aspx" />
+    <Content Include="SuscripcionValida.aspx" />
     <Content Include="testpage.aspx" />
     <Content Include="Tickets.aspx" />
     <Content Include="Web.config" />
@@ -222,6 +224,13 @@
     </Compile>
     <Compile Include="Suscripcion.aspx.designer.cs">
       <DependentUpon>Suscripcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuscripcionValida.aspx.cs">
+      <DependentUpon>SuscripcionValida.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuscripcionValida.aspx.designer.cs">
+      <DependentUpon>SuscripcionValida.aspx</DependentUpon>
     </Compile>
     <Compile Include="testpage.aspx.cs">
       <DependentUpon>testpage.aspx</DependentUpon>

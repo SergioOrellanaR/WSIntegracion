@@ -146,7 +146,8 @@
             </div>
         </div>
         <div class="parallax">
-            <img src="Fondo2.jpg" alt="Unsplashed background img 2"></div>
+            <img src="Fondo2.jpg" alt="Unsplashed background img 2">
+        </div>
     </div>
 
     <div class="container">
