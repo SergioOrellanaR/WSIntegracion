@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DabbawallasREST.Models.Responses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,11 @@ namespace DabbawallaView
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public LoginResponse DeserealizeSesion()
+        {
+            return (LoginResponse)Session["ses"];
         }
     }
 }

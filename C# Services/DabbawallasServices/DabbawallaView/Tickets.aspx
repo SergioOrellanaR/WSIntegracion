@@ -9,7 +9,7 @@
             <div class="col s12 center">
                 <h3><i class="mdi-content-send brown-text"></i></h3>
                 <h4>Tickets</h4>
-                <h6>Estado actual de su ticket: <asp:Label runat="server" Text="no hay ticket activo"></asp:Label></h6>
+                <h6><asp:Label runat="server" Text="" ID="lblTicketStatus"></asp:Label></h6>
             </div>
         </div>
         <div class="row">
@@ -27,7 +27,8 @@
                     </div>
                     <div class="card-action">
                         <asp:TextBox ID="txUsuario" type="text" placeholder="Usuario" runat="server"></asp:TextBox>
-                        <asp:Button type="submit" runat="server" Text="Enviar Ticket" CssClass="btn btn-large" Enabled="true" />
+                        <asp:CustomValidator ID="ValidateUserExists" runat="server" ErrorMessage="El usuario ingresado no existe" ControlToValidate="txUsuario" ForeColor="Red" OnServerValidate="ValidateUserExists_ServerValidate"></asp:CustomValidator>
+                        <asp:Button type="submit" runat="server" Text="Enviar Ticket" CssClass="btn btn-large" Enabled="true" ID="btnEnviarTicket" OnClick="EnviarTicket_Click" />
                     </div>
                 </div>
             </div>

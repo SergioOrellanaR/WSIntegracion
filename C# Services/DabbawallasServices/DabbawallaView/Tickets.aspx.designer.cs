@@ -13,6 +13,15 @@ namespace DabbawallaView {
     public partial class Tickets {
         
         /// <summary>
+        /// Control lblTicketStatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTicketStatus;
+        
+        /// <summary>
         /// Control txUsuario.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,24 @@ namespace DabbawallaView {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txUsuario;
+        
+        /// <summary>
+        /// Control ValidateUserExists.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator ValidateUserExists;
+        
+        /// <summary>
+        /// Control btnEnviarTicket.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEnviarTicket;
         
         /// <summary>
         /// Control ddlCalificacion.

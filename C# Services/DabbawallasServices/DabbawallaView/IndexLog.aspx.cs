@@ -19,7 +19,7 @@ namespace DabbawallaView
             }
             else
             {
-
+                lblWelcome.Text = "No ha iniciado sesión";
             }
         }
     }

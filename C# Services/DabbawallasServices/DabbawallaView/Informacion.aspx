@@ -7,18 +7,18 @@
         <ul class="collection">
             <li class="collection-item avatar">
                 <i class=" large material-icons circle red">account_circle</i>
-                Nombre:&nbsp<asp:Label runat="server" Text="Claudio Rios"></asp:Label>
+                Nombre:&nbsp<asp:Label runat="server" Text="" ID="lblDataNombre"></asp:Label>
                 <p>
-                    <asp:Label runat="server">Rol:</asp:Label>&nbsp<asp:Label runat="server" Text="Supervisor"></asp:Label>
+                    <asp:Label runat="server">Rol: </asp:Label>&nbsp<asp:Label runat="server" Text="" ID="lblDataRol"></asp:Label>
                     
                 <br>
-                    <asp:Label runat="server" Text="Dirección Hogar:"></asp:Label>&nbsp<asp:Label runat="server" Text="Los memes #1423"></asp:Label>
+                    <asp:Label runat="server" Text="Dirección Hogar: " ID="lblDireccionHogar"></asp:Label>&nbsp<asp:Label runat="server" Text="" ID="lblDataDirHog"></asp:Label>
                 <br>
-                    <asp:Label runat="server" Text="Dirección Trabajo:"></asp:Label>&nbsp<asp:Label runat="server" Text="Los memes #1423"></asp:Label>
+                    <asp:Label runat="server" Text="Dirección Trabajo:" ID="lblDireccionTrabajo"></asp:Label>&nbsp<asp:Label runat="server" Text="" ID="lblDataDirTra"></asp:Label>
                     <br>
-                    <asp:Label runat="server" Text="Dabbawalla Encargado:"></asp:Label>&nbsp<asp:Label runat="server" Text="Chino Rios"></asp:Label>
+                    <asp:Label runat="server" Text="Dabbawalla Encargado: " ID="lblDabbawallaEncargado"></asp:Label>&nbsp<asp:Label runat="server" Text="" ID="lblDataDabEncargado"></asp:Label>
                     <br>
-                    <asp:Label runat="server" Text="Supervisor Encargado:"></asp:Label>&nbsp<asp:Label runat="server" Text="Gaston Gaudio"></asp:Label>
+                    <asp:Label runat="server" Text="Supervisor Encargado: " ID="lblSupervisorEncargado"></asp:Label>&nbsp<asp:Label runat="server" Text="" ID="lblDataSupEncargado"></asp:Label>
                 </p>
                 <a href="Informacion.aspx" class="secondary-content"><i class="material-icons">grade</i></a>
             </li>           

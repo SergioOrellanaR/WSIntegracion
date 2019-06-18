@@ -19,43 +19,10 @@ namespace DabbawallaView
         RESTWebCaller caller = new RESTWebCaller();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-            //    if (Session["ses"] != null)
-            //    {
-            //        LoginResponse user = (LoginResponse)Session["ses"];
-            //        switch (user.IdTipoUsuario)
-            //        {
-            //            case 1:
-            //                navbarCliente = true;
-            //                navbarDabbawea = false;
-            //                navbarSupervisor = false;
-            //                navbarDefault = false;
-            //                break;
-            //            case 2:
-            //                navbarCliente = false;
-            //                navbarDabbawea = true;
-            //                navbarSupervisor = false;
-            //                navbarDefault = false;
-            //                break;
-            //            case 3:
-            //                navbarCliente = false;
-            //                navbarDabbawea = false;
-            //                navbarSupervisor = true;
-            //                navbarDefault = false;
-            //            default:
-            //                navbarCliente = false;
-            //                navbarDabbawea = false;
-            //                navbarSupervisor = false;
-            //                navbarDefault = true;
-            //                break;
-            //        }
-            //    }
-            //    else
-            //    {
-
-            //    }
-            //}
+            if (Session["ses"] != null)
+            {
+                Response.Redirect("IndexLog.aspx");
+            }
         }
 
         protected void Login(object sender, EventArgs e)
