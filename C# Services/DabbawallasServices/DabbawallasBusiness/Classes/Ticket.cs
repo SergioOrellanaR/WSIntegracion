@@ -75,7 +75,7 @@ namespace DabbawallasBusiness.Classes
         {
             try
             {
-                int closedTicketStatus = 5
+                int closedTicketStatus = 5;
                 Connection.DabbawallaDB.TICKET.First(receiver => ClienteRecibe.IdCliente == receiver.ID_CLIENTE_RECIBE && receiver.ID_ESTADO != closedTicketStatus);
                 return true;
             }
