@@ -44,7 +44,7 @@ namespace DabbawallasBusiness.Classes
             try
             {
                 int searchClientError = -1;
-                if (ClienteEnvia.IdCliente != searchClientError && ClienteRecibe.IdCliente != searchClientError)
+                if (ClienteEnvia.IdCliente != searchClientError && ClienteRecibe.IdCliente != searchClientError && ClienteEnvia.IdCliente != ClienteRecibe.IdCliente)
                 {
                     TICKET ticket = new TICKET
                     {
@@ -75,7 +75,7 @@ namespace DabbawallasBusiness.Classes
         {
             try
             {
-                Connection.DabbawallaDB.TICKET.First(receiver => ClienteRecibe.IdCliente == receiver.ID_CLIENTE_RECIBE);
+                Connection.DabbawallaDB.TICKET.First(receiver => ClienteRecibe.IdCliente == receiver.ID_CLIENTE_RECIBE && receiver.ID_ESTADO != 5);
                 return true;
             }
             catch (Exception e)
