@@ -95,35 +95,35 @@ namespace DabbawallasREST.Controllers
             }
         }
 
-        //[HttpPost]
-        //[Route("activar_suscripcion")]
-        //public IHttpActionResult ActivateSuscription(GenericClientRequest request)
-        //{
-        //    if (request == null || string.IsNullOrEmpty(request.Username))
-        //    {
-        //        return BadRequest();
-        //    }
+        [HttpPost]
+        [Route("activar_suscripcion")]
+        public IHttpActionResult ActivateSuscription(GenericClientRequest request)
+        {
+            if (request == null || string.IsNullOrEmpty(request.Username))
+            {
+                return BadRequest();
+            }
 
-        //    Cliente client = new Cliente().SearchClientByUsername(request.Username);
-        //    int idClientError = -1;
+            Cliente client = new Cliente().SearchClientByUsername(request.Username);
+            int idClientError = -1;
 
-        //    if (client.IdCliente != idClientError)
-        //    {
-        //        int InactiveSuscription = 0;
-        //        if (client.IdEstadoSuscripcion == InactiveSuscription)
-        //        {
-        //            client.ActivateSuscription();
-        //            return Ok("Suscripción activada");
-        //        }
-        //        else
-        //        {
-        //            return BadRequest("El cliente ya tiene una suscripción activa");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        return InternalServerError();
-        //    }
-        //}
+            if (client.IdCliente != idClientError)
+            {
+                int InactiveSuscription = 0;
+                if (client.IdEstadoSuscripcion == InactiveSuscription)
+                {
+                    client.ActivateSuscription();
+                    return Ok("Suscripción activada");
+                }
+                else
+                {
+                    return BadRequest("El cliente ya tiene una suscripción activa");
+                }
+            }
+            else
+            {
+                return InternalServerError();
+            }
+        }
     }
 }
