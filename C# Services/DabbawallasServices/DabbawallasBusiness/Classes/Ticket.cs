@@ -75,7 +75,8 @@ namespace DabbawallasBusiness.Classes
         {
             try
             {
-                Connection.DabbawallaDB.TICKET.First(receiver => ClienteRecibe.IdCliente == receiver.ID_CLIENTE_RECIBE && receiver.ID_ESTADO != 5);
+                int closedTicketStatus = 5
+                Connection.DabbawallaDB.TICKET.First(receiver => ClienteRecibe.IdCliente == receiver.ID_CLIENTE_RECIBE && receiver.ID_ESTADO != closedTicketStatus);
                 return true;
             }
             catch (Exception e)
