@@ -22,12 +22,19 @@ namespace DabbawallaView.Classes
             HttpWebResponse response = null;
             response = (HttpWebResponse)request.GetResponse();
             string responseString = null;
-            using (Stream stream = response.GetResponseStream())
+            try
             {
-                StreamReader reader = new StreamReader(stream);
-                responseString = reader.ReadToEnd();
-                reader.Close();
-                return responseString;
+                using (Stream stream = response.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(stream);
+                    responseString = reader.ReadToEnd();
+                    reader.Close();
+                    return responseString;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
             }
         }
 
@@ -64,6 +71,40 @@ namespace DabbawallaView.Classes
                 return null;
             }
            
+        }
+
+        public string MethodCallerPUT(string restPath, string serializedPostData)
+        {
+            //string restPath = "http://localhost:6970/dabbawallas/login/authenticate";
+            WebRequest request = WebRequest.Create(restPath);
+            request.Method = "PUT";
+            request.ContentType = "application/json";
+
+
+            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+            {
+                streamWriter.Write(serializedPostData);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+
+            try
+            {
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                string responseString = null;
+                using (Stream stream = response.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(stream);
+                    responseString = reader.ReadToEnd();
+                    reader.Close();
+                    return responseString;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         public string ObjectToJson<T> (T obj)

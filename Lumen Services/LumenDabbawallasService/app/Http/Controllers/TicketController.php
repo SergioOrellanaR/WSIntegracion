@@ -13,8 +13,8 @@ class TicketController extends Controller
     {
         if ($request->isJson()) {
             $obJson = json_decode($request->getContent());
-            $username = $obJson->username;
-            $calificacion = $obJson->calificacion;            
+            $username = $obJson->Username;
+            $calificacion = $obJson->Calificacion;            
             $usuarioValido = DB::table('dbo.USUARIO')->where('USERNAME', '=', $username)->select('ID_USUARIO')->first();
             if($usuarioValido!=null){
                 $id_usuario_recibe = $usuarioValido->ID_USUARIO;
@@ -32,7 +32,7 @@ class TicketController extends Controller
                         $ticket = Ticket::find($id_ticket);
                         $estado = $ticket->ID_ESTADO;
                         if ($estado > 0 && $estado <= 4) {
-                            $ticket->CALIFICACION_SERVICIO = $request->input('calificacion');
+                            $ticket->CALIFICACION_SERVICIO = $request->input('Calificacion');
                             $ticket->ID_ESTADO = 5;
                             $ticket->save();
                             return  response()->json(['succes'=>true, 'Ticket' =>$ticket], 200);

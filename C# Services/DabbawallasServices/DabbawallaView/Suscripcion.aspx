@@ -8,7 +8,7 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <div class="row center ">
-                    <h2><asp:Label runat="server" Text="Usted ya esta suscrito al servicio de Dabbawallas Chile" CssClass="header col s12 light "></asp:Label></h2>
+                    <h2><asp:Label ID="lblMessage" runat="server" Text="Usted ya esta suscrito al servicio de Dabbawallas Chile" CssClass="header col s12 light "></asp:Label></h2>
                 </div>
             </div>
         </div>
@@ -61,7 +61,8 @@
             <div class="row">
                 <div class="col s12 center">
                     <h3><i class="mdi-content-send brown-text"></i></h3>
-                    <h4>Suscribete Aqui</h4> <asp:Button type="submit" runat="server" Text="Suscribete" CssClass="btn btn-large" />
+                    <h4><asp:Label ID="lblSuscripcion" runat="server" Text="Suscribete Aqui"></asp:Label></h4>
+                    <asp:Button type="submit" runat="server" Text="Suscribete" CssClass="btn btn-large" OnClick="Unnamed2_Click" ID="btnSuscripcion"/>
                 </div>
             </div>
         </div>

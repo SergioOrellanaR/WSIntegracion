@@ -39,6 +39,10 @@ namespace DabbawallasBusiness.Classes
             Calificacion = 0;
         }
 
+        public Ticket()
+        {
+        }
+
         public bool Create()
         {
             try
@@ -82,6 +86,21 @@ namespace DabbawallasBusiness.Classes
             catch (Exception e)
             {
                 return false;
+            }
+        }
+
+        public string ReadOpenTicketSenderByReceiver()
+        {
+            try
+            {
+                int closedTicketStatus = 5;
+                TICKET dbticket = Connection.DabbawallaDB.TICKET.First(receiver => ClienteRecibe.IdCliente == receiver.ID_CLIENTE_RECIBE && receiver.ID_ESTADO != closedTicketStatus);
+                Cliente cli = new Cliente(dbticket.ID_CLIENTE_ENVIA.Value);
+                return cli.Username;
+            }
+            catch
+            {
+                return null;
             }
         }
     }

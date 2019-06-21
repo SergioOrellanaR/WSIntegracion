@@ -5,7 +5,7 @@ using System.Web;
 
 namespace DabbawallasREST.Models
 {
-    public class CerrarTicketRequest
+    public class CloseTicketRequest
     {
         public string Username { get; set; }
         public int Calificacion { get; set; }

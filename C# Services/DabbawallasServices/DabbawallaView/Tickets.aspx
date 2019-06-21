@@ -48,13 +48,13 @@
                         <div class="card-action">
                             <label>Califica nuestro servicio</label>
                             <asp:DropDownList class="form-control dropdown-trigger btn-small" ID="ddlCalificacion" runat="server">
-                                <asp:ListItem Text="1"></asp:ListItem>
-                                <asp:ListItem Text="2"></asp:ListItem>
-                                <asp:ListItem Text="3"></asp:ListItem>
-                                <asp:ListItem Text="4"></asp:ListItem>
-                                <asp:ListItem Text="5"></asp:ListItem>
+                                <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                                <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                                <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                                <asp:ListItem Text="4" Value="4"></asp:ListItem>
+                                <asp:ListItem Text="5" Value="5"></asp:ListItem>
                             </asp:DropDownList>
-                            <asp:Button type="submit" runat="server" Text="Cerrar Ticket" CssClass="btn btn-large red" Enabled="false" />
+                            <asp:Button type="submit" runat="server" Text="Cerrar Ticket" CssClass="btn btn-large red" Enabled="false" ID="btnCerrarTicket" OnClick="btnCerrarTicket_Click" />
                         </div>
                     </div>
                 </div>

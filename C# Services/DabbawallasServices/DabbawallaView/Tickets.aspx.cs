@@ -15,11 +15,33 @@ namespace DabbawallaView
         {
             if (Session["ses"] != null)
             {
-                int idCliente = 1;
+                int idUsuarioCliente = 1;
                 LoginResponse user = DeserealizeSesion();
-                if (user.IdTipoUsuario == idCliente)
+                if (user.IdTipoUsuario == idUsuarioCliente)
                 {
-                    Cliente client = new Cliente(user.IdUsuario);
+                    int inactiveSuscription = 0;
+                    //Cliente client = new Cliente(user.IdUsuario);
+                    Cliente client = new Cliente();
+                    client = client.SearchClientByUsername(user.Username);
+                    if (client.IdEstadoSuscripcion == inactiveSuscription)
+                    {
+                        btnEnviarTicket.Text = "Debe tener suscripcion activa";
+                        btnEnviarTicket.Enabled = false;
+                        btnCerrarTicket.Text = "Debe tener suscripción activa";
+                    }
+
+                    Ticket ticket = new Ticket()
+                    {
+                        ClienteRecibe = client
+                    };
+
+                    if (ticket.ReceiverUserHaveOpenTickets())
+                    {
+                        string nameSender = ticket.ReadOpenTicketSenderByReceiver();
+                        lblTicketStatus.Text = "Tiene un ticket abierto pendiente de " + nameSender;
+                        btnCerrarTicket.Enabled = true;
+                        btnCerrarTicket.Text = "Cerrar ticket abierto por " + nameSender;
+                    }
                 }
                 else
                 {
@@ -72,6 +94,30 @@ namespace DabbawallaView
                 {
                     lblTicketStatus.Text = "Ha habido un error al procesar su ticket";
                 }
+            }
+        }
+
+        protected void btnCerrarTicket_Click(object sender, EventArgs e)
+        {
+            LoginResponse user = DeserealizeSesion();
+            CloseTicketRequest request = new CloseTicketRequest()
+            {
+                Username = user.Username,
+                Calificacion = int.Parse(ddlCalificacion.SelectedValue)
+            };
+
+            string closeTicketURL = "http://localhost:6969/clausuraTicket";
+
+            string jsonRequest = JsonConvert.SerializeObject(request);
+            string jsonResponse = caller.MethodCallerPUT(closeTicketURL, jsonRequest);
+
+            if (jsonResponse != null)
+            {
+                lblTicketStatus.Text = "Ticket cerrado con éxito";
+            }
+            else
+            {
+                lblTicketStatus.Text = "Error";
             }
         }
     }
