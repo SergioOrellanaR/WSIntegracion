@@ -8,7 +8,8 @@ class Ticket extends Model
 {
     protected $table = 'TICKET';
     protected $primaryKey = 'ID_TICKET';
-    protected $dateFormat = 'Y-d-m H:i:s.v';
+    //protected $dateFormat = 'Y-d-m H:i:s.v';
+    protected $dateFormat = format("Y-m-d\TH:i:s");
     const UPDATED_AT='FECHA_CLAUSURA';
     // public $timestamps = false;
     
