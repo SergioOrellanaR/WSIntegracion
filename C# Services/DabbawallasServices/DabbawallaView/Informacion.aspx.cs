@@ -20,7 +20,8 @@ namespace DabbawallaView
                 switch (user.IdTipoUsuario)
                 {
                     case 1:
-                        Cliente client = new Cliente(user.IdTipoUsuario);
+                        Cliente client = new Cliente();
+                        client = client.SearchClientByUsername(user.Username);
                         lblDataRol.Text = "Cliente";
                         lblDataDabEncargado.Text = client.DabbawallaAsociado.Nombre + " " + client.DabbawallaAsociado.Apellido;
                         lblDataSupEncargado.Text = client.DabbawallaAsociado.SupervisorAsociado.Nombre + " " + client.DabbawallaAsociado.SupervisorAsociado.Apellido;
@@ -28,7 +29,8 @@ namespace DabbawallaView
                         lblDataDirTra.Text = client.DireccionTrabajo;
                         break;
                     case 2:
-                        Dabbawalla dab = new Dabbawalla(user.IdTipoUsuario);
+                        Dabbawalla dab = new Dabbawalla();
+                        dab = dab.SearchDabbawallaByUsername(user.Username);
                         lblDataRol.Text = "Dabbawalla";
                         lblDireccionHogar.Visible = false;
                         lblDireccionTrabajo.Visible = false;

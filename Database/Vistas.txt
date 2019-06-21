@@ -37,3 +37,24 @@ FROM dbo.DABBAWALLA
   LEFT OUTER JOIN dbo.CLIENTE as cl
   ON ID_DABBAWALLA_ASOCIADO = ID_DABBAWALLA
   group by ID_DABBAWALLA;
+GO
+Drop view IF EXISTS dbo.VISTA_ALERTAS_ACTIVAS;
+GO
+CREATE VIEW dbo.VISTA_ALERTAS_ACTIVAS as 
+select 
+alert.ID_ALERTA as ID_ALERTA,
+sup.ID_SUPERVISOR as ID_SUPERVISOR_ALERTADO,
+format (alert.FECHA_ALERTA, 'dd/MM/yyyy HH:mm:ss') as FECHA_ALERTA,
+usrcli.USERNAME as USERNAME_CLIENTE_ALERTA,
+cli.DIRECCION_HOGAR as DIRECCION_HOGAR_CLIENTE_ALERTA,
+comhogar.COMUNA as COMUNA_HOGAR_CLIENTE_ALERTA,
+dabcli.USERNAME as USERNAME_DABBAWALLA_ALERTADO,
+dabcli.CELULAR as CELULAR_DABBAWALLA_ALERTADO
+from dbo.ALERTA as alert
+join dbo.CLIENTE as cli on (alert.ID_CLIENTE_ALERTA = cli.ID_CLIENTE)
+join dbo.USUARIO as usrcli on (usrcli.ID_USUARIO = cli.id_usuario)
+join dbo.DABBAWALLA as dab on (dab.ID_DABBAWALLA = cli.ID_DABBAWALLA_ASOCIADO)
+join dbo.SUPERVISOR as sup on (sup.ID_SUPERVISOR = dab.ID_SUPERVISOR_ASOCIADO)
+join dbo.comuna as comhogar on (comhogar.id_comuna = cli.id_comuna_hogar)
+join dbo.USUARIO as dabcli on (dabcli.ID_USUARIO = dab.ID_USUARIO)
+where alert.ID_TIPO_ALERTA = 1 

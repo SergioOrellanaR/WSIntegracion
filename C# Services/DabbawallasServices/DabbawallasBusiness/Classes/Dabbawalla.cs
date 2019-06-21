@@ -106,5 +106,20 @@ namespace DabbawallasBusiness.Classes
             }
             return clientsList;
         }
+
+        public Dabbawalla SearchDabbawallaByUsername(string username)
+        {
+            try
+            {
+                int UserId = Connection.DabbawallaDB.USUARIO.First(usr => usr.USERNAME.Equals(username, StringComparison.InvariantCultureIgnoreCase)).ID_USUARIO;
+                int dabId = Connection.DabbawallaDB.DABBAWALLA.First(dab => dab.ID_USUARIO == UserId).ID_DABBAWALLA;
+                return new Dabbawalla(dabId);
+            }
+            catch
+            {
+                int dabError = -1;
+                return new Dabbawalla() { IdDabbawalla = dabError };
+            }
+        }
     }
 }

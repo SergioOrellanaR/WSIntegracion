@@ -49,6 +49,7 @@ namespace DabbawallasBusiness.Classes
             try
             {
                 CLIENTE client = Connection.DabbawallaDB.CLIENTE.First(cl => cl.ID_CLIENTE == IdCliente);
+                Connection.DabbawallaDB.Entry<CLIENTE>(client).Reload();
                 IdUsuario = client.ID_USUARIO.Value;
                 ReadUser();
                 IdEstadoSuscripcion = client.ID_ESTADO_SUSCRIPCION.Value;
@@ -72,6 +73,8 @@ namespace DabbawallasBusiness.Classes
                 CLIENTE client = Connection.DabbawallaDB.CLIENTE.First(cl => cl.ID_CLIENTE == IdCliente);
                 client.ID_ESTADO_SUSCRIPCION = 1;
                 Connection.DabbawallaDB.SaveChanges();
+                //Connection.DabbawallaDB.Dispose();
+                //Context.Entry<T>(entity).Reload();
                 return true;
             }
             catch (Exception)

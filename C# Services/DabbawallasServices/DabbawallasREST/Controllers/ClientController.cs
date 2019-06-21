@@ -95,7 +95,7 @@ namespace DabbawallasREST.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("activar_suscripcion")]
         public IHttpActionResult ActivateSuscription(GenericClientRequest request)
         {

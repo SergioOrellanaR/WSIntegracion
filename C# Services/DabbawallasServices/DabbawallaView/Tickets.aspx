@@ -59,8 +59,8 @@
                     </div>
                 </div>
             </div>
-            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget</p>
-            <asp:Button type="submit" runat="server" Text="Enviar Alerta" CssClass="btn btn-large red" Enabled="false" />
+            <p class="light">¿No han llegado a retirar su alimento?, envie una alerta al supervisor de su Dabbawalla!</p>
+            <asp:Button type="submit" runat="server" Text="Enviar Alerta" CssClass="btn btn-large red" Enabled="false" ID="btnAlerta" OnClick="btnAlerta_Click"/>
 
         </div>
 

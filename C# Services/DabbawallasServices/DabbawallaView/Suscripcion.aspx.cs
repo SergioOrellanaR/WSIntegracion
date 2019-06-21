@@ -49,7 +49,7 @@ namespace DabbawallaView
 
         protected void Unnamed2_Click(object sender, EventArgs e)
         {
-            string registerUrl = "http://localhost:6970/activar_suscripcion";
+            string registerUrl = "http://localhost:6970/dabbawallas/clientes/activar_suscripcion";
             LoginResponse user = DeserealizeSesion();
             GenericClientRequest activateRequest = new GenericClientRequest()
             {
@@ -57,7 +57,7 @@ namespace DabbawallaView
             };
 
             string jsonRequest = JsonConvert.SerializeObject(activateRequest);
-            string jsonResponse = caller.MethodCallerPOST(registerUrl, jsonRequest);
+            string jsonResponse = caller.MethodCallerPUT(registerUrl, jsonRequest);
 
             if (jsonResponse != null)
             {

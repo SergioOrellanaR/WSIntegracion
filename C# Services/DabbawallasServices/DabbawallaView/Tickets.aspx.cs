@@ -28,6 +28,15 @@ namespace DabbawallaView
                         btnEnviarTicket.Text = "Debe tener suscripcion activa";
                         btnEnviarTicket.Enabled = false;
                         btnCerrarTicket.Text = "Debe tener suscripción activa";
+                        btnAlerta.Visible = false;
+                    }
+                    else
+                    {
+                        btnEnviarTicket.Enabled = true;
+                        btnEnviarTicket.Text = "Abrir ticket";
+                        btnCerrarTicket.Text = "No tiene tickets pendientes";
+                        btnAlerta.Visible = true;
+                        btnAlerta.Enabled = true;
                     }
 
                     Ticket ticket = new Ticket()
@@ -118,6 +127,29 @@ namespace DabbawallaView
             else
             {
                 lblTicketStatus.Text = "Error";
+            }
+        }
+
+        protected void btnAlerta_Click(object sender, EventArgs e)
+        {
+            LoginResponse user = DeserealizeSesion();
+            GenericClientRequest request = new GenericClientRequest()
+            {
+                Username = user.Username
+            };
+
+            string sendAlertURL = "http://localhost:6970/dabbawallas/clientes/enviar_alerta";
+
+            string jsonRequest = JsonConvert.SerializeObject(request);
+            string jsonResponse = caller.MethodCallerPOST(sendAlertURL, jsonRequest);
+
+            if (jsonResponse != null)
+            {
+                lblTicketStatus.Text = "Se ha enviado una alerta al supervisor de su dabbawalla ";
+            }
+            else
+            {
+                lblTicketStatus.Text = "Error al enviar alerta";
             }
         }
     }
