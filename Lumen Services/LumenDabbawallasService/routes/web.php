@@ -24,4 +24,6 @@ $router->post('/geocode',['uses'=>'GeorefController@geocodeResponse']);
 $router->post('/pruebabd',['uses'=>'PruebaDBController@dbResponse']);
 $router->put('/suscripcion/{id}',['uses'=>'SuscripcionController@update']);
 $router->post('/alertasActivas',['uses'=>'AlertasController@verAlertasActivas']);
+$router->put('/cerrarAlerta',['uses'=>'AlertasController@cerrarAlerta']);
 $router->put('/clausuraTicket',['uses'=>'TicketController@cerrarTicket']);
+
