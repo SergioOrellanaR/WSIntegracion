@@ -3,12 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-
-        <asp:Gridview CssClass="responsive-table" runat="server">
-            <Columns>
-                <asp:TemplateField HeaderText="idCliente" SortExpression="Cliente"> </asp:TemplateField>
-                <asp:TemplateField HeaderText="FechaAlerta" SortExpression="Fecha"> </asp:TemplateField>
-            </Columns>
+        <asp:Label ID="lblMensajeVacio" runat="server" Text="No tiene alertas activas" Visible = "false"></asp:Label>
+        <asp:Gridview CssClass="responsive-table" runat="server" ID="grdAlertasActivas">
+            
         </asp:Gridview>
     </div>
     
