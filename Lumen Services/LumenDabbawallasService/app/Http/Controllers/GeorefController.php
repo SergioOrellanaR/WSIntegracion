@@ -36,17 +36,18 @@ class GeorefController extends Controller
         {
             $obJson = json_decode($request->getContent());
             $username = $obJson->username;
-            $usuarioValido = DB::table('dbo.VISTA_INFORMACION_CLIENTES_SUSCRITOS')->where('USERNAME_CLIENTE', '=', $username)->select()->first();
-            if ($usuarioValido==true){
-                $direccionHogar= $usuarioValido->DIRECCION_HOGAR;
+            $usuarioValido = DB::table('dbo.VISTA_INFORMACION_CLIENTES_SUSCRITOS')->where('USERNAME_CLIENTE', '=', $username)->select()->first();//Datos usuario BD
+            if ($usuarioValido==true){//Usuario es valido
+                $direccionHogar= $usuarioValido->DIRECCION_HOGAR;//Asigno todos los datos de la BD a las variables
                 $comunaHogar= $usuarioValido->COMUNA_HOGAR;
                 $direccionTrabajo= $usuarioValido->DIRECCION_TRABAJO;
                 $comunaTrabajo= $usuarioValido->COMUNA_TRABAJO;
-                $hogarFinal=  $direccionHogar . ' ' . $comunaHogar . ' Chile';
-                $trabajoFinal= $direccionTrabajo . ' '. $comunaTrabajo .' Chile';
+                $hogarFinal=  $direccionHogar . ', ' . $comunaHogar;
+                $trabajoFinal= $direccionTrabajo . ', '. $comunaTrabajo;
 
                 $resp_geoHogar = geocode($hogarFinal);
                 $resp_geoTrabajo = geocode($trabajoFinal);
+                
                 $latitudHogar = $resp_geoHogar['lat'];
                 $longitudHogar = $resp_geoHogar['lng'];
                 $latitudTrabajo = $resp_geoTrabajo['lat'];
