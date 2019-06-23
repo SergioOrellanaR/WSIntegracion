@@ -35,7 +35,7 @@ class GeorefController extends Controller
         if ($request->isJson())
         {
             $obJson = json_decode($request->getContent());
-            $username = $obJson->username;
+            $username = $obJson->Username;
             $usuarioValido = DB::table('dbo.VISTA_INFORMACION_CLIENTES_SUSCRITOS')->where('USERNAME_CLIENTE', '=', $username)->select()->first();//Datos usuario BD
             if ($usuarioValido==true){//Usuario es valido
                 $direccionHogar= $usuarioValido->DIRECCION_HOGAR;//Asigno todos los datos de la BD a las variables
