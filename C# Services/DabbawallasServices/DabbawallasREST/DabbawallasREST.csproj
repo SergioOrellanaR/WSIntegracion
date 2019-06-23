@@ -120,6 +120,7 @@
     <Compile Include="Models\RegisterSupervisorRequest.cs" />
     <Compile Include="Models\Responses\ActiveAlerts.cs" />
     <Compile Include="Models\Responses\AlertResponse.cs" />
+    <Compile Include="Models\Responses\GeoElementResponse.cs" />
     <Compile Include="Models\Responses\LoginResponse.cs" />
     <Compile Include="Models\Responses\TicketResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

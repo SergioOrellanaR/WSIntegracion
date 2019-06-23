@@ -5,7 +5,12 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    THIS IS A TESTPAGE!!
+                <div class="row">
+                <div class="input-field col s6">
+                    <asp:DropDownList class="form-control dropdown-trigger btn" ID="ddlComunaHogar" runat="server">
+                    </asp:DropDownList>
+                </div>
+            </div>
 </asp:Content>
 
 

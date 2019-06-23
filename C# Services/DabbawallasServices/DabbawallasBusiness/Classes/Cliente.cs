@@ -157,5 +157,10 @@ namespace DabbawallasBusiness.Classes
             }
             return dabbawalla;
         }
+
+        public string AddressAndComune (string address, int idComuna)
+        {
+            return address + ", " + nombreComuna(idComuna);
+        }
     }
 }
