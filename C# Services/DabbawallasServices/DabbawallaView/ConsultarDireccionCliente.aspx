@@ -16,41 +16,42 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:TextBox ID="txtBuscadorClientes" runat="server" Visible="false"></asp:TextBox>
-    <asp:CustomValidator ID="ValidateUserExists" runat="server" ErrorMessage="El cliente ingresado no existe" ControlToValidate="txtBuscadorClientes" ForeColor="Red" OnServerValidate="ValidateUserExists_ServerValidate"></asp:CustomValidator>
-    <br />
 
-    <div class="row">
-        <div class="input-field col s6">
-            <asp:DropDownList class="form-control dropdown-trigger btn" ID="ddlClientesAsociados" runat="server">
-            </asp:DropDownList>
-        </div>
-    </div>
-
-
-    <asp:Button ID="btnBuscarDireccion" runat="server" Text="Buscar dirección de cliente" OnClick="btnBuscarDireccion_Click" Visible="false" />
-    <br />
-    <h2>
-        <asp:Label ID="lblClienteBuscado" runat="server" Text=""></asp:Label>
-    </h2>
-    <div class="col s10 m7">
-        <div class="icon-block">
-            <h4>
-                <asp:Label ID="lblHogarHeader" runat="server" Text="Direccion de hogar" Visible="false"></asp:Label></h4>
-            <br />
-            <asp:Label ID="lblDireccionHogar" runat="server" Text=""></asp:Label>
-            <div class="col s12 m8">
-                <div class="card-large card-panel hoverable" id="mapBox">
-                    <div id="map"></div>
-                </div>
-            </div>
-            <div class="col s12 m8">
-                <h4><asp:Label ID="lblTrabajoHeader" runat="server" Text="Dirección de trabajo" Visible="false"></asp:Label></h4>
-                   
+    <div class="container col s12 m4 l8">
+        <div class="row">
+            <div class="input-field col s6">
+                <asp:TextBox ID="txtBuscadorClientes" runat="server" Visible="false" Text="Ingrese Username"></asp:TextBox>
+                <asp:CustomValidator ID="ValidateUserExists" runat="server" ErrorMessage="El cliente ingresado no existe" ControlToValidate="txtBuscadorClientes" ForeColor="Red" OnServerValidate="ValidateUserExists_ServerValidate"></asp:CustomValidator>
+                <asp:DropDownList class="form-control dropdown-trigger btn" ID="ddlClientesAsociados" runat="server">
+                </asp:DropDownList>
+                <asp:Button ID="btnBuscarDireccion" runat="server" Text="Buscar dirección de cliente" OnClick="btnBuscarDireccion_Click" Visible="false" class="btn" />
                 <br />
-                <asp:Label ID="lblDireccionTrabajo" runat="server" Text=""></asp:Label>
-                <div class="card-large card-panel hoverable" id="map2Box">
-                    <div id="map2"></div>
+                <h4>
+                    <asp:Label ID="lblClienteBuscado" runat="server" Text=""></asp:Label>
+                </h4>
+            </div>
+
+            <div class="input-field col s6">
+                <div class="icon-block">
+                    <h4>
+                        <asp:Label ID="lblHogarHeader" runat="server" Text="Direccion de hogar" Visible="false"></asp:Label></h4>
+                    <br />
+                    <asp:Label ID="lblDireccionHogar" runat="server" Text=""></asp:Label>
+                    <div class="col s12 m12">
+                        <div class="card-large card-panel hoverable" id="mapBox">
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12">
+                        <h4>
+                            <asp:Label ID="lblTrabajoHeader" runat="server" Text="Dirección de trabajo" Visible="false"></asp:Label></h4>
+
+                        <br />
+                        <asp:Label ID="lblDireccionTrabajo" runat="server" Text=""></asp:Label>
+                        <div class="card-large card-panel hoverable" id="map2Box">
+                            <div id="map2"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
