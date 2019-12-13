@@ -2129,7 +2129,7 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v4.2.8",
+            "version": "4.2.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
@@ -2182,7 +2182,7 @@
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v4.2.8",
+            "version": "4.2.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
